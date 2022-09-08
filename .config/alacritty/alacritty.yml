@@ -1,0 +1,65 @@
+env:
+  # Even if `alacritty` is available, set to `xterm-256color` for connecting
+  # to remote hosts
+  TERM: xterm-256color
+
+window:
+  padding:
+    x: 10
+    y: 10
+
+font:
+  normal: 
+    style: Regular
+    family: Jetbrains Mono Nerd Font
+
+  size: 15
+
+colors:
+  primary:
+    background: '#000000' #'#080808'
+
+shell:
+  program: /usr/bin/zsh
+
+draw_bold_text_with_bright_colors: false
+
+# Colors
+colors:
+  # Default colors
+  primary:
+    background:        '#000000' #'#080808'
+    foreground:        '#ffffff' #'#b2b2b2'
+    bright_foreground: '#eeeeee'
+
+  # Cursor colors
+  cursor:
+    text:   '#080808'
+    cursor: '#9e9e9e'
+
+  # Selection colors
+  selection:
+    text:       '#000000'
+    background: '#ffffff'
+
+  # Normal colors
+  normal:
+    black:   '#323437'
+    red:     '#ff5454'
+    green:   '#8cc85f'
+    yellow:  '#e3c78a'
+    blue:    '#80a0ff'
+    magenta: '#d183e8'
+    cyan:    '#79dac8'
+    white:   '#c6c6c6'
+
+  # Bright colors
+  bright:
+    black:   '#949494'
+    red:     '#ff5189'
+    green:   '#36c692'
+    yellow:  '#c2c292'
+    blue:    '#74b2ff'
+    magenta: '#ae81ff'
+    cyan:    '#85dc85'
+    white:   '#e4e4e4'

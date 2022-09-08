@@ -1,0 +1,267 @@
+{
+    // "mode": "dock",
+    "layer": "top",
+    "position": "top",
+    "height": 27,
+    "margin": 7,
+    "fixed-center": true,
+    
+    // Choose the order of the modules
+    "modules-left": ["wlr/workspaces", "custom/sep_l", "keyboard-state", "custom/sep_l", "tray", "custom/updates"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "custom/sep_r", "disk", "custom/sep_r", "memory", "custom/sep_r", "pulseaudio", "custom/sep_r", "network", "custom/sep_r", "custom/notification", "custom/sep_r", "custom/launcher"],
+
+    // Custom Seperators
+    "custom/sep_r": {
+		    "format": ""
+    },
+ 
+    
+    "custom/sep": {
+        "format": "|"
+    },
+
+    "custom/sep_l": {
+		    "format": ""
+    },
+    
+    "custom/empty": {
+		    "format": "  "
+    },
+    // End Seperators
+    
+    "custom/notification": {
+		    "tooltip": false,
+		    "format": "{icon}",
+		    "format-icons": {
+			      "notification": "<span foreground='white'><sup></sup></span>",
+			      "none": " ",
+			      "dnd-notification": "<span foreground='white'><sup></sup></span>",
+			      "dnd-none": " "
+		    },
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-middle": "swaync-client -d -sw",
+    "on-click-right": "swaync-client -C",
+		"escape": true
+	},
+    
+	"wlr/workspaces": {
+	    "disable-scroll": false,
+		  "all-outputs": true,
+		  "format": "{icon}",
+      "active-only": true,
+		  "persistent_workspaces": {
+			    "1": [],
+			    "2": [],
+			    "3": [],
+			    "4": [],
+			    "5": [],
+			    "6": [],
+			    "7": [],
+			    "8": [],
+			    "9": [],
+			    "10": [],
+          "11": [],
+          "12": []
+		  },
+		  "format-icons": {
+          "1": "I",
+          "2": "II",
+          "3": "III",
+          "4": "IV",
+          "5": "V",
+          "6": "VI",
+          "7": "VII",
+          "8": "VIII",
+          "9": "IX",
+          "10": "X",
+          "11": "XI",
+          "12": "XII"
+     }
+	},
+
+  
+  "keyboard-state": {
+      "numlock": false,
+      "capslock": true,
+      "format": "{name} {icon}",
+      "format-icons": {
+          "locked": " ",
+          "unlocked": " "
+      }
+  },
+  
+  "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 2
+    },
+
+		
+    "clock": { 
+		    "timezone": "Europe/Istanbul", 
+		    "format": "{: %I:%M %p   %d/%m/%Y}",
+        // "format": "  {:%H:%M}  {:%b %d %Y}", 
+		    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		    "format-alt": "{: %d/%m%y }",
+    		"today-format": "<span color='#ff6699'><b><u>{}</u></b></span>",
+    		"calendar-weeks-pos": "right",
+    		"format-calendar": "<span color='#ecc6d9'><b>{}</b></span>",
+    		"format-calendar-weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
+        "format-calendar-weekdays": "<span color='#ffcc66'><b>{}</b></span>", 
+		    "interval": 10,
+        "on-click-middle": "kalendar" 
+     }, 
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        // "critical-threshold": 85,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [" ", "", " "]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": " {icon} {percent}% ",
+        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}{capacity}%  ",
+        "format-charging": " {capacity}%  ",
+        "format-plugged": " {capacity}%  ",
+        "format-alt": "{icon}{time}  ",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["  ", "  ", "  ", "  ", "  "]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+		"format-wifi": "  Connected",
+		"format-ethernet": "  Connected",
+		"format-disconnected": "  Disconnected",
+		"tooltip-format-wifi": "{essid} | Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        // "tooltip-format-wifi": "",
+        "tooltip-format-ethernet": "{ipaddr}  ",
+
+        "format-linked": "{ifname} (No IP) ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}{volume}%  {format_source}",
+        "format-bluetooth": "{icon}{volume}%  {format_source}",
+        "format-bluetooth-muted": "{icon}  {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [" ", " ", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+    
+    "disk": {
+    	"interval": 180,
+    	"format": "  {free} (/)",
+	    "tooltip": "{used}/{total} ({percentage_used}%)", 	
+    	"path": "/"
+    },
+    
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "wofi --show run",
+        "on-click-right": "killall wofi"
+    },
+    
+    "custom/power":{
+        "format": " ",
+        "on-click": "pkill Hyprland" 
+        // "bash ~/.config/rofi/leave/leave.sh",
+    },
+    
+    "custom/updates":{
+        "format": "|   {} Update(s)",
+        "exec": "checkupdates | wc -l",
+        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+        "interval": 60,
+        "on-click": "kitty -e yay -Syu && notify-send 'The system has been updated' || notify-send 'System upgrade has failed' "
+    },
+    
+    "custom/wallpaper":{
+        "format":" ",
+        "on-click": "kill $(pidof wpaperd) ;  wpaperd"
+    }
+}
+

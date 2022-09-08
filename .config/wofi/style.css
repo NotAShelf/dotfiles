@@ -1,0 +1,64 @@
+
+/*
+Arc-Dark Color Scheme
+*/
+
+@define-color highlight #ffffff;
+@define-color base1  rgba(40 ,40 ,40 ,0.95 );
+@define-color base2  rgba(40 ,40 ,40 ,0.95 );
+@define-color base3  rgba(50 ,48 ,47 ,0.75 );
+
+*{
+    font-family: JetbrainsMono;
+    font-size: 12px ;
+}
+
+window {
+    border: 2px solid @highlight;
+    border-radius: 10px;  
+    background-color: @base2;
+
+}
+
+#input {
+    margin-bottom: 15px;
+    padding:2px;
+    border-radius: 10px;
+    border: 0px solid @highlight;
+    color: #ebdbb2;
+    background-color: @base3;
+}
+
+#inner-box {
+    background:transparent;
+    padding:0px;
+}
+
+#outer-box {
+    margin: 5px;
+    padding:15px;
+    /*background-color: @base2;*/
+}
+
+#text {
+    padding:0px;
+    color: #A89984;
+}
+
+#text:selected {
+    color: @highlight;
+}
+
+#entry {
+    padding:10px;
+    border-radius:0px;
+}
+
+#entry:nth-child(even) {
+}
+
+#entry:selected {
+    background-color: transparent;
+    border: 2px solid @highlight;
+    border-radius:10px;
+}
