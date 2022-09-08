@@ -53,16 +53,4 @@ Below, you will find a small repository map to somewhat help you out with whatev
 |   |        
 │   ├── hypr/
 |   |   └── hyprland.conf - My hyprland configuration. Everything else is irrelevant and outdated.
-│   │
-│   ├── plugins
-│   │    ├── init.lua -- (default plugin list)
-│   │    └── configs
-│   │        ├── cmp.lua
-│   │        ├── others.lu -- (list of small configs of plugins)
-│   │        └── many more plugin configs
-|   |
-│   ├── custom *
-│   │   ├── chadrc.lua -- (overrides default_config)
-│   │   ├── init.lua -- (runs after main init.lua file)
-│   │   ├── more files, dirs
 ```
