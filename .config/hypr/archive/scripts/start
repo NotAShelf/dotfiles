@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# We want Hyprland to work correctly with Wayland.
+systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+
+# Kill already running process
+_ps=(waybar mako xfce-polkit wpaperd)
+for _prs in "${_ps[@]}"; do
+	if [[ `pidof ${_prs}` ]]; then
+		killall -9 ${_prs}
+	fi
+done
+
+# Polkit agent
+/usr/lib/xfce-polkit/xfce-polkit &
+
+# Set wallpaper
+wpaperd &
+
+# Apply themes
+~/.config/hypr/hyprland/scripts/gtkthemes &
+
+# Launch notification daemon (mako)
+~/.config/hypr/hyprland/scripts/notifications &
+
+# Launch Waybar
+~/.config/hypr/hyprland/scripts/waybar &
+
+# Bluetooth and NetworkManager applets
+nm-applet --indicator &
+blueman-applet &
+
+## Start my go-to applications
+playerctld daemon &
+
+# flatpak applications
+flatpak run com.spotify.Client &
+flatpak run com.discordapp.Discord &
+flatpak run com.nextcloud.desktopclient.nextcloud &
+
+# run cleanup script
+sh ./cleanup &
+
+# Unused
+#kanshi
+#exec xrdb -load ~/.Xresources

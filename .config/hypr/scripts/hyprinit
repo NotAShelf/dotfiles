@@ -1,0 +1,8 @@
+#!/bin/bash
+sleep 4
+killall xdg-desktop-portal-wlr
+killall xdg-desktop-portal
+killall xdg-desktop-portal-gtk
+/usr/lib/xdg-desktop-portal-wlr &
+sleep 4
+/usr/lib/xdg-desktop-portal &

@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+# We want Hyprland to work correctly with Wayland.
+systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+
+# Kill already running process
+_ps=(waybar mako mpd xfce-polkit wpaperd nm-applet blueman-applet )
+for _prs in "${_ps[@]}"; do
+	if [[ `pidof ${_prs}` ]]; then
+		killall -9 ${_prs}
+	fi
+done
+
+# Polkit agent
+/usr/lib/xfce-polkit/xfce-polkit &
+
+# Set wallpaper
+wpaperd &
+
+# Apply themes
+~/.config/hypr/scripts/gtkthemes &
+
+# Lauch notification daemon (mako)
+~/.config/hypr/scripts/notifications &
+
+# Lauch statusbar (waybar)
+~/.config/hypr/scripts/statusbar &
+
+# Start mpd
+exec mpd &
+
+# Bluetooth and NetworkManager applets
+#nm-applet --indicator &
+#blueman-applet &
+
+
+# Start Notification Daemon
+# another option is swaync, but mako is more familiar to me
+mako  &
+
+## Start waybar
+#waybar --config ~/.config/hypr/hyprland/waybar/config --style ~/.config/hypr/hyprland/waybar/style.css &
+
+## Start my go-to applications
+playerctld daemon &
+gnome-keyring-daemon --start &
+
+# flatpak applications
+flatpak run com.spotify.Client &
+flatpak run com.discordapp.Discord &
+flatpak run com.nextcloud.desktopclient.nextcloud &
+
+xrandr -s 1920x1080 -r 59.00 &
+
+sh ./cleanup &
+
+# Unused
+#kanshi
+#exec xrdb -load ~/.Xresources
