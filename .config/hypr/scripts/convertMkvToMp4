@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Receive the mkv file to convert to mp4
+mkvFile=$1
+
+# Convert the mkv file to mp4
+ffmpeg -i "$mkvFile" -c:v libx264 -c:a aac -strict -2 "${mkvFile%.*}.mp4"
+
+
+# Convert
+#ffmpeg -i $1 -codec copy $2.mp4
