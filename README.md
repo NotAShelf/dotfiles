@@ -19,7 +19,7 @@ that you scroll below for the repository map and find what you are looking for
 
 Here are some details about my setup:
 
-+ **WM**: [Hyprland](https://github.com/awesomeWM/awesome/) - *the* Wayland Compositor
++ **WM**: [Hyprland](https://github.com/hyprwm/Hyprland/) - *the* Wayland Compositor
 + **OS**: Arch Linux
 + **Shell**: [zsh](https://wiki.archlinux.org/index.php/Zsh)
 + **Terminal(s)**: [kitty](https://github.com/kovidgoyal/kitty/) & [Alacritty](https://github.com/alacritty/alacritty)
@@ -33,7 +33,6 @@ Here are some details about my setup:
 
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/wofi.png" alt="img" align="left" width="400px">
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/terms.png" alt="img" align="left" width="400px">
-
 
 ## Main Applications
 
@@ -50,7 +49,7 @@ You will find my configs for Hyprland, Swaync, Waybar, wpaperd and Wofi in the `
 
 ---
 
-#### Keyboard
+### Keyboard
 | Keybind | Action |
 | --- | --- |
 | <kbd>super + enter</kbd> | Spawn terminal |
@@ -59,12 +58,15 @@ You will find my configs for Hyprland, Swaync, Waybar, wpaperd and Wofi in the `
 | <kbd>super + shift + q</kbd> | Close active window |
 | <kbd>super + control + space</kbd> | Toggle float for active window |
 | <kbd>super + [1-0]</kbd> | Focus selected workspace |
-| <kbd>super + [*/Backspace] | "Speecial" workspaces. |
+| <kbd>super + [*(Asterisk)/Backspace] | "Special" workspaces. |
+| <kbd>SUPER + shift + KP_Multiply (*) | Send to *special* workspace |
 | <kbd>super + shift + [1-0]</kbd> | Send window to specified workspaces |
   
 *... More to be documented later.*
+  
+---
 
-### Notes
+## Notes
 If you have any questions or issues, open an issue under this repository. If you have any suggestions for improvement, head to the "Pull Requests" section and make your changes. If you think this repository is confusing, you are (mostly) right. See the repository map below.
 
 ## Repository Map
