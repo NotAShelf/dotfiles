@@ -117,21 +117,11 @@ plugins=(
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconfig="nano $XDG_CONFIG_HOME/zsh/.zshrc"
-alias ohmyzsh="nano $XDG_DATA_HOME/oh-my-zsh/.oh-my-zsh"
+
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# my aliases
-alias grep='rg'  # ripgrep
-alias  cat='bat' # bat
-alias   ls='lsd' # lsd
-alias maid='npm' # node package maid lol
-alias find='fd'  # fd
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -143,49 +133,15 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 export GPG_TTY=$(tty)
 
+# Include my aliases
+source $HOME/.config/zsh/aliases
+
 # fix locale problems
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# flatpak aliases
-alias discord='flatpak run com.discordapp.Discord'
-alias spotify='flatpak run com.spotify.Client'
-alias flameshot='flatpak run org.flameshot.Flameshot'
-alias zoom='flatpak run us.zoom.Zoom'
-alias flatseal='flatpak run com.github.tchx84.Flatseal'
-
 # xdg being a very viby boy
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_STATE_HOME=$HOME/.local/state
-export XDG_CACHE_HOME=$HOME/.cache
+source $HOME/.config/zsh/xdg-exports
 
-# clean my home directory
-# this will be moved to its seperate file and be sourced later in the future
-
-export ANDROID_HOME="$XDG_DATA_HOME"/android
-export HISTFILE="${XDG_STATE_HOME}"/bash/history
-export CARGO_HOME="$XDG_DATA_HOME"/cargo  
-export CUDA_CACHE_PATH="$XDG_DATA_HOME"/nv
-export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-export GOPATH="$XDG_DATA_HOME"/go 
-export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle  
-export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc 
-export KDEHOME="$XDG_CONFIG_HOME"/kde  
-export LESSHISTFILE="$XDG_CACHE_HOME/less/history" 
-export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
-export NVM_DIR="$XDG_DATA_HOME"/nvm 
-export ZSH="$XDG_DATA_HOME"/oh-my-zsh  
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java 
-export WINEPREFIX="$XDG_DATA_HOME"/wine
-export HISTFILE="$XDG_STATE_HOME"/zsh/history  
-export ZDOTDIR="$HOME"/.config/zsh  
-export ZSH="$XDG_DATA_HOME/oh-my-zsh"
-export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
-
-alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'
-alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
-alias yarn='yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config'
-
+# Oh my zsh!
 source $ZSH/oh-my-zsh.sh
