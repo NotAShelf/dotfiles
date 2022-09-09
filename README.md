@@ -1,5 +1,13 @@
-# dotfiles
-A repository for (mostly) everything that starts with a dot.
+<p align="center">
+  <img width="25%" src="https://github.com/notashelf.png" />
+</p>
+
+<p align="center">
+  <b>A repository for most things starting with a dot</b>
+</p>
+
+
+
 
 Hello stranger,
 
@@ -12,6 +20,30 @@ Then I pity you. Oh, to be looking for a specific configuration in the repositor
 Below, you will find a small repository map to somewhat help you out with whatever the hell I have going on in this repository. Best of luck, traveller.
 
 *P.S. If you have *any* suggestions for better managing my dotfiles, please let me know. I am in pain.*
+
+
+## Main Applications
+
+- Compositor: [Hyprland](https://github.com/hyprwm/hyprland) - *The* Wayland compositor. 
+- Notification Daemon: swaync
+- Bar: Waybar
+- Wallpaper Daemon: wpaperd
+- Application Menu: Wofi
+- Polkit Agent: xfce-polkit
+- Gamma Controller: gammastep (only one that works on NVIDIA gpus)
+- Locker: swaylock-effects (the mildly more updated fork)
+- Clipboard Manager: Clipman 
+
+You will find my configs for Hyprland, Swaync, Waybar, wpaperd and Wofi in the .config directory.
+
+
+
+
+
+
+
+
+
 
 ## Repository Map
 
