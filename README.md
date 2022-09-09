@@ -45,6 +45,7 @@ Here are some details about my setup:
 - **Locker**: swaylock-effects (the mildly more updated fork)
 - **Clipboard Manager**: Clipman 
 - **Media**: MPD & nncmpp
+- **Shell Prompt**: Oh My Zsh! + Powerlevel10k
 You will find my configs for Hyprland, Swaync, Waybar, wpaperd and Wofi in the `.config` directory, should you be interested.
 
 ---
