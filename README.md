@@ -34,7 +34,7 @@ Here are some details about my setup:
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/wofi.png" alt="img" align="left" width="400px">
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/terms.png" alt="img" align="left" width="400px">
 
-## Main Applications
+### Main Applications
 
 + **Notification Daemon**: swaync
 - **Bar**: Waybar
