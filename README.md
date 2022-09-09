@@ -6,46 +6,74 @@
   <b>A repository for most things starting with a dot</b>
 </p>
 
+---
 
+### Welcome fellow stranger
 
+<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/main.png" alt="img" align="right" width="400px">
+<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/logout.png" alt="img" align="right" width="400px">
 
-Hello stranger,
+This is where I periodically throw my configuration files. You might be here for 
+something specific, in that case I recommend 
+that you scroll below for the repository map and find what you are looking for
 
-If you have randomly stumbled on repository, I am sorry to have subjected you to this... mess would be one way to put it. 
+Here are some details about my setup:
 
-You may leave while you still have time.
-If you, however, are here on purpose; most likely looking for a specific configuration. 
-Then I pity you. Oh, to be looking for a specific configuration in the repository of my dotfiles.
++ **WM**: [Hyprland](https://github.com/hyprwm/Hyprland/) - *the* Wayland Compositor
++ **OS**: Arch Linux
++ **Shell**: [zsh](https://wiki.archlinux.org/index.php/Zsh)
++ **Terminal(s)**: [kitty](https://github.com/kovidgoyal/kitty/) & [Alacritty](https://github.com/alacritty/alacritty)
++ **Editor**: [Neovim](https://github.com/neovim/neovim/) w/ [NvChad](https://github.com/NvChad/NvChad)
++ **Org editor**: [Doom Emacs](https://github.com/hlissner/doom-emacs/)
++ **File Manager**: [Dolphin](https://github.com/KDE/dolphin)
++ **Launcher**: [Wofi](https://hg.sr.ht/~scoopta/wofi/) 
++ **Browser(s)**: Firefox & Waterfox (I use 3 browsers, shut up)
 
-Below, you will find a small repository map to somewhat help you out with whatever the hell I have going on in this repository. Best of luck, traveller.
+--- 
 
-*P.S. If you have *any* suggestions for better managing my dotfiles, please let me know. I am in pain.*
-
+<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/wofi.png" alt="img" align="left" width="400px">
+<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/terms.png" alt="img" align="left" width="400px">
 
 ## Main Applications
 
-- Compositor: [Hyprland](https://github.com/hyprwm/hyprland) - *The* Wayland compositor. 
-- Notification Daemon: swaync
-- Bar: Waybar
-- Wallpaper Daemon: wpaperd
-- Application Menu: Wofi
-- Polkit Agent: xfce-polkit
-- Gamma Controller: gammastep (only one that works on NVIDIA gpus)
-- Locker: swaylock-effects (the mildly more updated fork)
-- Clipboard Manager: Clipman 
++ **Notification Daemon**: swaync
+- **Bar**: Waybar
+- **Wallpaper Daemon**: wpaperd
+- **Application Menu**: Wofi
+- **Polkit Agent**: xfce-polkit
+- **Gamma Controller**: gammastep (only one that works on NVIDIA gpus)
+- **Locker**: swaylock-effects (the mildly more updated fork)
+- **Clipboard Manager**: Clipman 
+- **Media**: MPD & nncmpp
+- **Shell Prompt**: Oh My Zsh! + Powerlevel10k
 
-You will find my configs for Hyprland, Swaync, Waybar, wpaperd and Wofi in the .config directory.
+You will find my configs for Hyprland, Swaync, Waybar, wpaperd and Wofi in the `.config` directory, should you be interested.
 
+---
 
+### Keyboard
+| Keybind | Action |
+| --- | --- |
+| <kbd>super + enter</kbd> | Spawn terminal |
+| <kbd>super + shift + enter</kbd> | Spawn floating terminal |
+| <kbd>super + d</kbd> | Launch wofi |
+| <kbd>super + shift + q</kbd> | Close active window |
+| <kbd>super + control + space</kbd> | Toggle float for active window |
+| <kbd>super + [1-0]</kbd> | Focus selected workspace |
+| <kbd>super + [*(Asterisk)/Backspace] | "Special" workspaces. |
+| <kbd>SUPER + shift + KP_Multiply (*) | Send to *special* workspace |
+| <kbd>super + shift + [1-0]</kbd> | Send window to specified workspaces |
+  
+*... More to be documented later.*
+  
+---
 
-
-
-
-
-
-
+## Notes
+If you have any questions or issues, open an issue under this repository. If you have any suggestions for improvement, head to the "Pull Requests" section and make your changes. If you think this repository is confusing, you are (mostly) right. See the repository map below.
 
 ## Repository Map
+
+If you want to find something *before* you start looking into each individual directory, inspect the map below. It was tedious to create; but I hope it eases things for you, my fellow visitor.
 
 ```
 ├── Hyprland (My Hyprland launch script on NVIDIA. Mostly useless on AMD GPUs.)
