@@ -25,7 +25,7 @@ window {
     padding:2px;
     border-radius: 10px;
     border: 0px solid @highlight;
-    color: #ebdbb2;
+    color: #FFFFFF;
     background-color: @base3;
 }
 
@@ -42,7 +42,7 @@ window {
 
 #text {
     padding:0px;
-    color: #A89984;
+    color: #FFFFFF;
 }
 
 #text:selected {
