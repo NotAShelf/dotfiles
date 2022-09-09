@@ -47,7 +47,7 @@ Here are some details about my setup:
 - **Media**: MPD & nncmpp
 - **Shell Prompt**: Oh My Zsh! + Powerlevel10k
 
-You will find my configs for Hyprland, Swaync, Waybar, wpaperd and Wofi in the `.config` directory, should you be interested.
+You will find my configs for Hyprland, Swaync, Waybar and Wofi in the `.config` directory, should you be interested.
 
 ---
 
