@@ -6,6 +6,9 @@ monitors="$(hyprctl monitors -j | jq -r '.[] | .name' | tr '\n' ' ')"
 screenshot_dir="$(mktemp -d)"
 
 swaylock_args=(
+    --fade-in 5
+    --grace 10
+
     --clock
     --indicator
     --indicator-idle-visible
@@ -42,9 +45,6 @@ swaylock_args=(
     --text-caps-lock-color ebdbb2
     --text-ver-color ebdbb2
     --text-wrong-color ebdbb2
-      
-    --grace 3 
-    --daemonize
 )
 
 for monitor in ${monitors}; do
@@ -55,13 +55,6 @@ for monitor in ${monitors}; do
 
     swaylock_args+=("--image=${monitor}:${screenshot_file}")
 done
-
-# not sure why i didnt just do `swayidle ... &`; this is
-# how i wrote it as i was going but I think it looks nice
-# so im just keeping it
-{
-    swayidle -w timeout 300 'hyprctl dispatch dpms off'
-} &
 
 swaylock ${swaylock_args[@]}
 
