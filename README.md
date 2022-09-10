@@ -71,6 +71,12 @@ You will find my configs for Hyprland, Swaync, Waybar and Wofi in the `.config` 
 ## Notes
 If you have any questions or issues, open an issue under this repository. If you have any suggestions for improvement, head to the "Pull Requests" section and make your changes. If you think this repository is confusing, you are (mostly) right. See the repository map below.
 
+### Credits
+Huge props to the awesome people listed below. If you like my dotfiles in the state they are in, it's most likely dude to how much those people inspired me (euphemism for stealing) with their configurations.
+
++ **[bauzin-32](https://github.com/bazuin-32/dotfiles)** - Most of my revamped zsh configuration and my new locking scripts from his dots. Awesome scripts, and incredibly neat dots. Massive thanks for having the dots open to public on Github.
+
+
 ## Repository Map
 
 If you want to find something *before* you start looking into each individual directory, inspect the map below. It was tedious to create; but I hope it eases things for you, my fellow visitor.
