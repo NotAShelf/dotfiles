@@ -34,7 +34,7 @@ Here are some details about my setup:
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/wofi.png" alt="img" align="left" width="400px">
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/terms.png" alt="img" align="left" width="400px">
 
-## Main Applications
+### Main Applications
 
 + **Notification Daemon**: swaync
 - **Bar**: Waybar
@@ -47,7 +47,7 @@ Here are some details about my setup:
 - **Media**: MPD & nncmpp
 - **Shell Prompt**: Oh My Zsh! + Powerlevel10k
 
-You will find my configs for Hyprland, Swaync, Waybar, wpaperd and Wofi in the `.config` directory, should you be interested.
+You will find my configs for Hyprland, Swaync, Waybar and Wofi in the `.config` directory, should you be interested.
 
 ---
 
