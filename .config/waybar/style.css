@@ -4,19 +4,21 @@
     font-size: 15px;
     color: #eeeeee;
     border-radius: 20px; /* Controls Rounding */
-    padding: 2px 4px;
+    padding: 2px 2px;
 }
 
 #window {
-	/*font-weight: bold;*/
-  margin-top: 6px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-  color: transparent;
-	background: transparent;
-}
+    /*font-weight: bold;*/
+    margin-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    border-radius: 8px;
+    transition: none;
+    color: transparent;
+    background: transparent;
+
+  }
 
 window#waybar {
     background: rgba(0, 0, 0, 0.85);
@@ -31,7 +33,7 @@ window#waybar {
     border-radius: 20px;
 }
 
-.modules-center {
+.mnodules-center {
 	background-color: rgba(8,8,8,0.85);
     /* background: transparent; */
     margin: 0 0 0 0;
