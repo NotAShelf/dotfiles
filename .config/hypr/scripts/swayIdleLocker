@@ -8,7 +8,8 @@ screenshot_dir="$(mktemp -d)"
 swaylock_args=(
     --fade-in 5
     --grace 10
-
+    --daemonize
+    
     --clock
     --indicator
     --indicator-idle-visible
