@@ -10,7 +10,7 @@ alias grep='rg'  # ripgrep
 alias  cat='bat' # bat
 alias   ls='lsd' # lsd
 alias maid='npm' # node package maid lol
-alias find='fd'  # fd
+#alias find='fd'  # fd
 
 # zsh specific aliases
 alias zshconfig="nano $XDG_CONFIG_HOME/zsh/.zshrc"

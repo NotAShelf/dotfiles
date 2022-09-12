@@ -6,7 +6,6 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 
 # clean my home directory
-
 export ANDROID_HOME="$XDG_DATA_HOME"/android
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
@@ -32,3 +31,4 @@ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 alias yarn='yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config'
+alias polymc='polymc --dir "$XDG_DATA_HOME"/minecraft
