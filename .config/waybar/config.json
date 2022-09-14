@@ -140,7 +140,7 @@
 		    "format": "{: %I:%M %p   %d/%m/%Y}",
         // "format": "  {:%H:%M}  {:%b %d %Y}", 
 		    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		    "format-alt": "{: %d/%m%y }",
+		    "format-alt": "{: %I:%M %p}",
     		"today-format": "<span color='#ff6699'><b><u>{}</u></b></span>",
     		"calendar-weeks-pos": "right",
     		"format-calendar": "<span color='#ecc6d9'><b>{}</b></span>",
