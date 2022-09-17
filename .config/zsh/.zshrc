@@ -1,5 +1,9 @@
-# User configuration
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -15,7 +19,7 @@ export PATH="$PNPM_HOME:$PATH"
 export GPG_TTY=$(tty)
 
 # Include my aliases
-source $HOME/.config/zsh/aliases.zsh
+source "$HOME"/.config/zsh/aliases.zsh
 
 # fix locale problems
 export LANG=en_US.UTF-8
@@ -28,7 +32,7 @@ source $HOME/.config/zsh/xdg-exports.zsh
 source ~/.config/zsh/oh-my-zsh.zsh
 
 # History Options
-export HISTFILE="$HOME/.zsh_history"
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export HISTSIZE=50000
 export SAVEHIST=50000
 
@@ -44,4 +48,3 @@ autoload -U compinit && compinit
 
 # Logs function for pacman 
 source ~/.config/zsh/plog.zsh
-
