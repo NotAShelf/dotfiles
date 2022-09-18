@@ -78,6 +78,7 @@ plugins=(
    zsh-syntax-highlighting
    zsh-autosuggestions
    zsh-completions
+   evalcache
 )
 
 source $ZSH/oh-my-zsh.sh

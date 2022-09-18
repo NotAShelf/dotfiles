@@ -8,15 +8,14 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export NVM_DIR="$XDG_DATA_HOME/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # pnpm
 export PNPM_HOME="/home/notashelf/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
 export GPG_TTY=$(tty)
+
+zmodload zsh/zprof
 
 # Include my aliases
 source "$HOME"/.config/zsh/aliases.zsh
@@ -43,7 +42,7 @@ zstyle ':completion:*' cache-path "~/.cache/zsh/.zcompcache"
 # Personal Completitions
 # for some reason this does not seem to be done by omz, shame
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-fpath=($fpath ~/.config/zsh/completions)
+#fpath=($fpath ~/.config/zsh/completions)
 autoload -U compinit && compinit
 
 # Logs function for pacman 
