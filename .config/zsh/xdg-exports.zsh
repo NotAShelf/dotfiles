@@ -26,6 +26,7 @@ export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export ZDOTDIR="$HOME"/.config/zsh
 export ZSH="$XDG_DATA_HOME/oh-my-zsh"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+#export $ZSH_EVALCACHE_DIR="$XDG_CACHE_HOME"/zsh-evalcache
 
 # and aliases
 alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'
