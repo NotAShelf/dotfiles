@@ -4,6 +4,7 @@ alias spotify='flatpak run com.spotify.Client'
 alias flameshot='flatpak run org.flameshot.Flameshot'
 alias zoom='flatpak run us.zoom.Zoom'
 alias flatseal='flatpak run com.github.tchx84.Flatseal'
+alias protontricks='flatpak run com.github.Matoking.protontricks'
 
 # my own aliases
 alias grep='rg'  # ripgrep
