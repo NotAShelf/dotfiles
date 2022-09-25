@@ -1,13 +1,15 @@
 #!/bin/bash
 
 echo "Installing specified packages"
-packages=`cat $HOME/.config/install_scripts/packages.txt`
+scriptdir=`$(pwd)`
+
+packages=`cat ${scriptdir}/packages.txt`
 
 for package in $packages
 do 
   sudo pacman -S $package --noconfirm
 done
-echo "Installed all packages specified in '$HOME/Scrips/packages.txt"
+echo "Installed all packages specified in '${packages}'"
 
 # Check if fonts directory exists, ask the user if they want to install the fonts
 if [ -d "$HOME/.local/share/fonts" ]; then
