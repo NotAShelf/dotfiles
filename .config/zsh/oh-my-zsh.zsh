@@ -68,17 +68,22 @@ DISABLE_LS_COLORS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-   git
    aliases
+   autojump
    archlinux
    command-not-found
-   thefuck
-   ripgrep
+   evalcache
    fzf
+   git
+   git-auto-fetch
+   nvm
+   rsync
+   ripgrep
+   sudo
+   thefuck
    zsh-syntax-highlighting
    zsh-autosuggestions
    zsh-completions
-   evalcache
 )
 
 source $ZSH/oh-my-zsh.sh
