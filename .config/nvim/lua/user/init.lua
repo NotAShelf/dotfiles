@@ -192,7 +192,20 @@ local config = {
           }
         end,
       },
-
+      {
+        "nvim-orgmode/orgmode",
+        config = function()
+          require("orgmode").setup {
+            org_agenda_files = { "~/Documents/Cloud/Notes/Org*" },
+            org_default_notes_file = "~/Documents/Cloud/Notes/Org/Orgrefile.org",
+          }
+        end,
+      },
+      {
+        "petertriho/nvim-scrollbar",
+        config = function() require("scrollbar").setup {}
+      end,
+      },
       -- Github Copilot
       {
         "github/copilot.vim",
@@ -240,7 +253,12 @@ local config = {
       return config -- return final config table to use in require("null-ls").setup(config)
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
-      ensure_installed = { "lua" },
+      ensure_installed = { "lua", "org" },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { "org" }, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
+      },
+      require("orgmode").setup_ts_grammar(),
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
