@@ -1,27 +1,34 @@
 [Added Associations]
 application/json=org.kde.kate.desktop;
 application/x-yaml=code-oss.desktop;
+audio/flac=mpv.desktop;
 image/jpeg=org.kde.gwenview.desktop;
 image/png=org.kde.gwenview.desktop;
 inode/directory=org.kde.dolphin.desktop;code-oss.desktop;
 text/markdown=org.kde.kwrite.desktop;
+text/plain=org.kde.kwrite.desktop;
 text/x-log=org.kde.kate.desktop;
+text/x-python=code-oss.desktop;
 video/mp4=mpv.desktop;
 x-scheme-handler/geo=qwant-maps-geo-handler.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 x-scheme-handler/mailto=org.kde.kmail2.desktop;userapp-Thunderbird-3HTXR1.desktop;
-x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-3HTXR1.desktop;
+x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
 
 [Default Applications]
 application/json=org.kde.kate.desktop;
+audio/flac=mpv.desktop;
 image/jpeg=org.kde.gwenview.desktop;
 image/png=org.kde.gwenview.desktop;
 inode/directory=org.kde.dolphin.desktop;
+message/rfc822=userapp-Thunderbird-3HTXR1.desktop
 text/html=firefox.desktop
 text/markdown=org.kde.kwrite.desktop;
+text/plain=org.kde.kwrite.desktop;
 text/x-log=org.kde.kate.desktop;
+text/x-python=code-oss.desktop;
 video/mp4=mpv.desktop;
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/discord-580018394888273931=discord-580018394888273931.desktop
@@ -29,7 +36,6 @@ x-scheme-handler/geo=qwant-maps-geo-handler.desktop;
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
 x-scheme-handler/mailto=userapp-Thunderbird-3HTXR1.desktop
+x-scheme-handler/mid=userapp-Thunderbird-3HTXR1.desktop
 x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
 x-scheme-handler/unknown=firefox.desktop
-message/rfc822=userapp-Thunderbird-3HTXR1.desktop
-x-scheme-handler/mid=userapp-Thunderbird-3HTXR1.desktop

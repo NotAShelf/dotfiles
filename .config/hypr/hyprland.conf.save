@@ -19,8 +19,8 @@ $steam=steam-native
 $librewolf=flatpak run io.gitlab.librewolf-community
 $wobpipe=/tmp/wobpipe
 $xobpipe=/tmp/xobpipe
-$lock=playerctl --player=spotify,firefox -a pause ; ~/.config/hypr/scripts/swayLocker
-$idlelock=playerctl --player=spotify,firefox -a pause ; ~/.config/hypr/scripts/swayIdleLocker
+$lock=playerctl --player=spotify,firefox -a pause && ~/.config/hypr/scripts/swayLocker
+$idlelock=playerctl --player=spotify,firefox -a pause~/.config/hypr/scripts/swayIdleLocker
 $torrent=qbittorrent
 
 #-- Output ---------------------------------------------------------------
@@ -167,6 +167,7 @@ windowrule=center,NVIM
 
 windowrule=opacity 0.90,kitty
 windowrule=opacity 0.90,Alacritty
+
 windowrule=opaque,^(gamescope)$ 
 
 windowrule=noblur,gamescope

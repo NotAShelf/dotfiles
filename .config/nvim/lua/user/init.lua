@@ -11,7 +11,7 @@ local config = {
     remote = "origin", -- remote to use
     channel = "nightly", -- "stable" or "nightly"
     version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "main", -- branch name (NIGHTLY ONLY)
+    branch = "nightly", -- branch name (NIGHTLY ONLY)
     commit = nil, -- commit hash (NIGHTLY ONLY)
     pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
     skip_prompts = false, -- skip prompts about breaking changes
@@ -166,6 +166,7 @@ local config = {
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+      ["<leader>gl"] = { "<cmd>Glow<cr>", desc = "Markdown preview" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
@@ -183,6 +184,8 @@ local config = {
 
       -- You can also add new plugins here as well:
       -- Add plugins, the packer syntax without the "use"
+      -- { "andweeb/presence.nvim" },
+
       -- Discord presence
       {
         "andweeb/presence.nvim",
@@ -192,6 +195,17 @@ local config = {
           }
         end,
       },
+      -- Markdown preview via Glow
+      {
+        "ellisonleao/glow.nvim",
+        config = function()
+          require("glow").setup {
+            style = "dark",
+            width = 120,
+          }
+        end,
+      },
+
       {
         "nvim-orgmode/orgmode",
         config = function()
@@ -203,14 +217,13 @@ local config = {
       },
       {
         "petertriho/nvim-scrollbar",
-        config = function() require("scrollbar").setup {}
-      end,
+        config = function() require("scrollbar").setup {} end,
       },
       -- Github Copilot
       {
         "github/copilot.vim",
       },
-
+      -- Markdown preview via glow
       -- {
       --   "ray-x/lsp_signature.nvim",
       --   event = "BufRead",
@@ -230,44 +243,47 @@ local config = {
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
       -- config variable is the default configuration table for the setup functino call
-      local null_ls = require "null-ls"
+      -- local null_ls = require "null-ls"
+
       -- Check supported formatters and linters
       -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
       -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
       config.sources = {
         -- Set a formatter
-        null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.prettier,
+        -- null_ls.builtins.formatting.stylua,
+        -- null_ls.builtins.formatting.prettier,
       }
       -- set up null-ls's on_attach function
-      -- NOTE: You can remove this on attach function to disable format on save
-      config.on_attach = function(client)
-        if client.resolved_capabilities.document_formatting then
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            desc = "Auto format before save",
-            pattern = "<buffer>",
-            callback = vim.lsp.buf.formatting_sync,
-          })
-        end
-      end
+      -- NOTE: You can uncomment this on attach function to enable format on save
+      -- config.on_attach = function(client)
+      --   if client.resolved_capabilities.document_formatting then
+      --     vim.api.nvim_create_autocmd("BufWritePre", {
+      --       desc = "Auto format before save",
+      --       pattern = "<buffer>",
+      --       callback = vim.lsp.buf.formatting_sync,
+      --     })
+      --   end
+      -- end
       return config -- return final config table to use in require("null-ls").setup(config)
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
+      -- ensure_installed = { "lua" },
       ensure_installed = { "lua", "org" },
       highlight = {
         enable = true,
-        additional_vim_regex_highlighting = { "org" }, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
+        additional_vim_regex_highlighting = { "org" }, -- Required for spellcheck, some LaTex highlights and code block highlight>
       },
       require("orgmode").setup_ts_grammar(),
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-      ensure_installed = { "sumneko_lua" },
+      -- ensure_installed = { "sumneko_lua" },
     },
     -- use mason-tool-installer to configure DAP/Formatters/Linter installation
     ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`
-      ensure_installed = { "prettier", "stylua" },
+      -- ensure_installed = { "prettier", "stylua" },
     },
+    -- Unhide hidden
     ["neo-tree"] = {
       filesystem = {
         filtered_items = {
@@ -319,6 +335,7 @@ local config = {
           -- third key is the key to bring up next level and its displayed
           -- group name in which-key top level menu
           ["b"] = { name = "Buffer" },
+          ["gl"] = { name = "Glow" },
         },
       },
     },
@@ -330,13 +347,13 @@ local config = {
   polish = function()
     -- Set key binding
     -- Set autocommands
-    vim.api.nvim_create_augroup("packer_conf", { clear = true })
-    vim.api.nvim_create_autocmd("BufWritePost", {
-      desc = "Sync packer after modifying plugins.lua",
-      group = "packer_conf",
-      pattern = "plugins.lua",
-      command = "source <afile> | PackerSync",
-    })
+    -- vim.api.nvim_create_augroup("packer_conf", { clear = true })
+    -- vim.api.nvim_create_autocmd("BufWritePost", {
+    --   desc = "Sync packer after modifying plugins.lua",
+    --   group = "packer_conf",
+    --   pattern = "plugins.lua",
+    --   command = "source <afile> | PackerSync",
+    -- })
 
     -- Set up custom filetypes
     -- vim.filetype.add {
