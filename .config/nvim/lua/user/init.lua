@@ -237,11 +237,8 @@ local config = {
       {
         "jghauser/mkdir.nvim",
       },
-      -- Markdown preview via glow
       {
-        "ray-x/lsp_signature.nvim",
-        event = "BufRead",
-        config = function() require("lsp_signature").setup() end,
+        "sunjon/shade.nvim",
       },
       -- {
       --   "ray-x/lsp_signature.nvim",
