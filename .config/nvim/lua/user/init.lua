@@ -26,8 +26,8 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "default_theme",
-
+  --colorscheme = "default_theme",
+  colorscheme = "nazgul", -- Set colorscheme
   -- Override highlight groups in any theme
   highlights = {
     -- duskfox = { -- a table of overrides/changes to the default
@@ -63,12 +63,13 @@ local config = {
   -- Set dashboard header
   header = {
     " ",
-    "    ███    ██ ██    ██ ██ ███    ███",
-    "    ████   ██ ██    ██ ██ ████  ████",
-    "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-    "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-    "    ██   ████   ████   ██ ██      ██",
+    "      ███    ██ ██    ██ ██ ███    ███",
+    "      ████   ██ ██    ██ ██ ████  ████",
+    "      ██ ██  ██ ██    ██ ██ ██ ████ ██",
+    "      ██  ██ ██  ██  ██  ██ ██  ██  ██",
+    "      ██   ████   ████   ██ ██      ██",
     " ",
+    "[Tip] Power off your computer and go outside",
   },
 
   -- Default theme configuration
@@ -166,7 +167,7 @@ local config = {
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
-      ["<leader>gl"] = { "<cmd>Glow<cr>", desc = "Markdown preview" },
+      ["<leader>m"] = { "<cmd>Glow<cr>", desc = "Markdown Preview" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
@@ -181,11 +182,14 @@ local config = {
     init = {
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
-
-      -- You can also add new plugins here as well:
-      -- Add plugins, the packer syntax without the "use"
-      -- { "andweeb/presence.nvim" },
-
+      -- Dark-ish theme for Nvim
+      {
+        "nocksock/nazgul-vim",
+      },
+      -- Better search?
+      {
+        "kevinhwang91/nvim-hlslens",
+      },
       -- Discord presence
       {
         "andweeb/presence.nvim",
@@ -217,13 +221,28 @@ local config = {
       },
       {
         "petertriho/nvim-scrollbar",
-        config = function() require("scrollbar").setup {} end,
+        config = function()
+          require("scrollbar").setup {
+            handle = {
+              color = "#222222",
+            },
+          }
+        end,
       },
       -- Github Copilot
       {
         "github/copilot.vim",
       },
+      -- Mkdir for save
+      {
+        "jghauser/mkdir.nvim",
+      },
       -- Markdown preview via glow
+      {
+        "ray-x/lsp_signature.nvim",
+        event = "BufRead",
+        config = function() require("lsp_signature").setup() end,
+      },
       -- {
       --   "ray-x/lsp_signature.nvim",
       --   event = "BufRead",
@@ -267,7 +286,6 @@ local config = {
       return config -- return final config table to use in require("null-ls").setup(config)
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
-      -- ensure_installed = { "lua" },
       ensure_installed = { "lua", "org" },
       highlight = {
         enable = true,
@@ -283,7 +301,6 @@ local config = {
     ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`
       -- ensure_installed = { "prettier", "stylua" },
     },
-    -- Unhide hidden
     ["neo-tree"] = {
       filesystem = {
         filtered_items = {
@@ -335,7 +352,6 @@ local config = {
           -- third key is the key to bring up next level and its displayed
           -- group name in which-key top level menu
           ["b"] = { name = "Buffer" },
-          ["gl"] = { name = "Glow" },
         },
       },
     },
@@ -345,6 +361,18 @@ local config = {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    local function alpha_on_bye(cmd)
+      local bufs = vim.fn.getbufinfo { buflisted = true }
+      vim.cmd(cmd)
+      if require("core.utils").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
+    end
+
+    vim.keymap.del("n", "<leader>c")
+    if require("core.utils").is_available "bufdelete.nvim" then
+      vim.keymap.set("n", "<leader>c", function() alpha_on_bye "Bdelete!" end, { desc = "Close buffer" })
+    else
+      vim.keymap.set("n", "<leader>c", function() alpha_on_bye "bdelete!" end, { desc = "Close buffer" })
+    end
     -- Set key binding
     -- Set autocommands
     -- vim.api.nvim_create_augroup("packer_conf", { clear = true })
