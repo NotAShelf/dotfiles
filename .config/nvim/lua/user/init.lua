@@ -209,7 +209,7 @@ local config = {
           }
         end,
       },
-
+      -- Emacs orgmode for Neovim
       {
         "nvim-orgmode/orgmode",
         config = function()
@@ -219,6 +219,7 @@ local config = {
           }
         end,
       },
+      -- Adds a funny scrollbar to, well, scroll
       {
         "petertriho/nvim-scrollbar",
         config = function()
