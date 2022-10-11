@@ -5,24 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# pnpm
-export PNPM_HOME="/home/notashelf/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+source ~/.config/zsh/plugins/p10k.zsh
 
 export GPG_TTY=$(tty)
 
-zmodload zsh/zprof
-
-# Include my aliases
+# My own aliases & exports
+# exports are now in .zshenv
 source "$HOME"/.config/zsh/aliases.zsh
-
-# fix locale problems
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# xdg being a very viby boy
-source $HOME/.config/zsh/xdg-exports.zsh
 
 # Source OMZ configurations
 source ~/.config/zsh/oh-my-zsh.zsh
@@ -42,24 +31,8 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 #fpath=($fpath ~/.config/zsh/completions)
 autoload -U compinit && compinit
 
-# Logs function for pacman 
-source ~/.config/zsh/plog.zsh
+# Source plugin loads, if necessary
+source "$HOME"/.config/zsh/plugins/*.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
-        . "/usr/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+# Source functions
+source "$HOME"/.config/zsh/functions/*.zsh
