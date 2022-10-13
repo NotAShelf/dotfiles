@@ -14,7 +14,7 @@ export GPG_TTY=$(tty)
 source "$HOME"/.config/zsh/aliases.zsh
 
 # Source OMZ configurations
-source ~/.config/zsh/oh-my-zsh.zsh
+source "$XDG_CONFIG_HOME"/zsh/oh-my-zsh.zsh
 
 # History Options
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
@@ -23,16 +23,19 @@ export SAVEHIST=50000
 
 # Cache completitions = moar speed!
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "~/.cache/zsh/.zcompcache"
+zstyle ':completion:*' cache-path '"$XDG_CACHE_HOME"/zsh/.zcompcache'
 
 # Personal Completitions
 # for some reason this does not seem to be done by omz, shame
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 #fpath=($fpath ~/.config/zsh/completions)
-autoload -U compinit && compinit
+autoload -U compinit && compinit -d "$XDG_CACHE_HOME"zsh/zcompdump-"$ZSH_VERSION"
 
 # Source plugin loads, if necessary
-source "$HOME"/.config/zsh/plugins/*.zsh
+source "$HOME"/.config/zsh/plugins/pnpm.zsh
+source "$HOME"/.config/zsh/plugins/conda.zsh
 
 # Source functions
-source "$HOME"/.config/zsh/functions/*.zsh
+source "$HOME"/.config/zsh/functions/paclog.zsh
+source "$HOME"/.config/zsh/functions/timezsh.zsh
+source "$HOME"/.config/zsh/functions/ffmpeg.zsh
