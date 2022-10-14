@@ -1,0 +1,40 @@
+#!/bin/sh
+
+randomizeWallpaper() {
+	# List all images in given directory, which is the first argument
+	# to this script.
+	images=$(find "$1" -type f \( -name '*.jpg' -o -name '*.png' \))
+	
+	echo "Found the following images:"
+	echo "$images"
+	
+	# Count the number of images.
+	num_images=$(echo "$images" | wc -l)
+
+	# Pick a random image.
+	image=$(echo "$images" | head -n $((RANDOM % num_images + 1)) | tail -n 1)
+
+	# Set wallpaper after emitting chosen image
+	echo "Setting $image as wallpaper."
+	sleep 1
+	
+	# Check if swww is running by validating if $XDG_RUNTIME_DIR/swww.socket exists
+	
+	if [ -f '"$XDG_RUNTIME_DIR"/swww.socket' ]; then
+		echo "Swww socket found."
+		swww img "${image}"
+	else
+		echo "Swww already running"
+		swww init && swww img "${image}"
+	fi	
+}
+
+case $(date +%H) in
+	08 | 09 | 10 | 11 | 12 | 13 | 14 | 15) # morning to noon
+	randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Dark"
+	;;
+	
+	16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 01 | 02 | 03 | 04 | 05 | 06 | 07) # afternoon to morning	
+	randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Light"
+	;;
+esac
