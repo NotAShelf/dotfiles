@@ -32,5 +32,5 @@ alias ohmyzsh='nano "$XDG_DATA_HOME"/oh-my-zsh/.oh-my-zsh'
 # xdg-specific aliases
 alias nvidia-settings='nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings'
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
-alias yarn='yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config'
+#alias yarn='yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config'
 alias polymc='polymc --dir "$XDG_DATA_HOME"/minecraft'

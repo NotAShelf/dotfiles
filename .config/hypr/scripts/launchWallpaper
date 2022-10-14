@@ -18,23 +18,22 @@ randomizeWallpaper() {
 	echo "Setting $image as wallpaper."
 	sleep 1
 	
-	# Check if swww is running by validating if $XDG_RUNTIME_DIR/swww.socket exists
-	
-	if [ -f '"$XDG_RUNTIME_DIR"/swww.socket' ]; then
-		echo "Swww socket found."
+	# Check if swww is running 
+	if pgrep -x "swww" > /dev/null; then
 		swww img "${image}"
 	else
-		echo "Swww already running"
+		# If it's not running, start swww before setting the image
 		swww init && swww img "${image}"
-	fi	
+	fi
+
 }
 
 case $(date +%H) in
 	08 | 09 | 10 | 11 | 12 | 13 | 14 | 15) # morning to noon
-	randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Dark"
+	randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Light"
 	;;
 	
 	16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 01 | 02 | 03 | 04 | 05 | 06 | 07) # afternoon to morning	
-	randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Light"
+	randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Dark"
 	;;
 esac
