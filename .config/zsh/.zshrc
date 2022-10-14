@@ -14,6 +14,11 @@ export GPG_TTY=$(tty)
 source "$HOME"/.config/zsh/aliases.zsh
 
 # Source OMZ configurations
+if [ -z "$ZSH_COMPDUMP" ]; then
+   # ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+   ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+fi
+
 source "$XDG_CONFIG_HOME"/zsh/oh-my-zsh.zsh
 
 # History Options
@@ -29,7 +34,7 @@ zstyle ':completion:*' cache-path '"$XDG_CACHE_HOME"/zsh/.zcompcache'
 # for some reason this does not seem to be done by omz, shame
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 #fpath=($fpath ~/.config/zsh/completions)
-autoload -U compinit && compinit -d "$XDG_CACHE_HOME"zsh/zcompdump-"$ZSH_VERSION"
+autoload -U compinit && compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
 # Source plugin loads, if necessary
 source "$HOME"/.config/zsh/plugins/pnpm.zsh
