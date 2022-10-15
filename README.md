@@ -10,7 +10,7 @@
 
 ### Welcome fellow stranger
 
-<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/main.png" alt="img" align="right" width="400px"><br/>
+<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/main.png" alt="img" align="right" width="400px">
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/terminals.png" alt="img" align="right" width="400px">
 
 This is where I periodically throw my configuration files. You might be here for 
@@ -22,30 +22,32 @@ Here are some details about my setup:
 + **WM**: [Hyprland](https://github.com/hyprwm/Hyprland/) - *the* Wayland Compositor
 + **OS**: Arch Linux
 + **Shell**: [zsh](https://wiki.archlinux.org/index.php/Zsh)
++ **Font**: [https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf](JetBrains Mono Nerd Font)
 + **Terminal(s)**: [kitty](https://github.com/kovidgoyal/kitty/) & [Alacritty](https://github.com/alacritty/alacritty)
++ **Shell Prompt**: Oh My Zsh! + Powerlevel10k
 + **Editor**: [Neovim](https://github.com/neovim/neovim/) w/ [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 + **Org editor**: [Doom Emacs](https://github.com/hlissner/doom-emacs/)
 + **File Manager**: [Dolphin](https://github.com/KDE/dolphin)
 + **Launcher**: [Wofi](https://hg.sr.ht/~scoopta/wofi/) 
-+ **Browser(s)**: Firefox & Waterfox (I use 3 browsers, shut up)
 
 --- 
 
-<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/wofi.png" alt="img" align="left" width="400px"><br/>
+<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/wofi.png" alt="img" align="left" width="400px">
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/logout.png" alt="img" align="left" width="400px">
 
 ### Main Applications
 
++ **Browser(s)**: Firefox & Waterfox (I use 3 browsers, shut up)
 + **Notification Daemon**: swaync
-- **Bar**: Waybar
-- **Wallpaper Daemon**: swww
-- **Application Menu**: Wofi
-- **Polkit Agent**: gnome-polkit
-- **Gamma Controller**: gammastep (only one that works on NVIDIA gpus)
-- **Locker**: swaylock-effects (the mildly more updated fork)
-- **Clipboard Manager**: cliphist
-- **Media**: mopidy & nncmpp
-- **Shell Prompt**: Oh My Zsh! + Powerlevel10k
++ **Bar**: Waybar
++ **Wallpaper Daemon**: swww
++ **Application Menu**: Wofi
++ **Polkit Agent**: gnome-polkit
++ **Gamma Controller**: gammastep (only one that works on NVIDIA gpus)
++ **Locker**: swaylock-effects (the mildly more updated fork)
++ **Powermenu**: wlogout
++ **Clipboard Manager**: cliphist
++ **Media**: mopidy & nncmpp
 
 ---
 
