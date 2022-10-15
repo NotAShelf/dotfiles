@@ -1,7 +1,7 @@
 * {
     border: none;
     font-family: "JetbrainsMono Nerd Font" ;
-    font-size: 15px;
+    font-size: 16px;
     color: #eeeeee;
     border-radius: 20px; /* Controls Rounding */
     padding: 2px 2px;
@@ -52,26 +52,28 @@ tooltip {
 }
 
 #workspaces {
-	padding: 0px 7px 0px 7px ;
+
   padding-right: 0px;
 }
 
 /*-----modules indv----*/
 #workspaces button {
-    padding-left: 7px; 
     font-weight: bold;
+    /* padding-right: 7px */
 }
 #workspaces button:hover {
-    box-shadow: inherit;
-	color: #000000;
+    font-weight: bold;
+    /* padding-right: 7px */
 }
 
 #workspaces button.focused {
-	color: #000000;
+    font-weight: bold;
+    /* padding-right: 7px */
 }
 
 #workspaces button.active {
-	color: #000000;
+    font-weight: bold;
+    /* padding-right: 7px */
 }
 
 #custom-sep_l {
@@ -113,7 +115,7 @@ tooltip {
 }
 #custom-menu {
     font-weight: bold;
-    padding-right: 7px;
+    /* padding-right: 7px; */
 }
 #idle_inhibitor {
     padding: 0 5px;
