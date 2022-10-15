@@ -1,5 +1,6 @@
 [Added Associations]
 application/json=org.kde.kate.desktop;
+application/x-wine-extension-ini=org.kde.kate.desktop;
 application/x-yaml=code-oss.desktop;
 audio/flac=mpv.desktop;
 image/jpeg=org.kde.gwenview.desktop;
@@ -19,6 +20,7 @@ x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
 
 [Default Applications]
 application/json=org.kde.kate.desktop;
+application/x-wine-extension-ini=org.kde.kate.desktop;
 audio/flac=mpv.desktop;
 image/jpeg=org.kde.gwenview.desktop;
 image/png=org.kde.gwenview.desktop;
