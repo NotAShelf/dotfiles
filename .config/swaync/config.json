@@ -1,7 +1,7 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
-  "positionY": "top",
+  "positionY": "bottom",
   "control-center-margin-top": 20,
   "control-center-margin-bottom": 20,
   "control-center-margin-right": 20,
@@ -15,7 +15,7 @@
   "fit-to-screen": true,
   "control-center-width": 500,
   "control-center-height": 600,
-  "notification-window-width": 500,
+  "notification-window-width": 350,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
   "transition-time": 200,

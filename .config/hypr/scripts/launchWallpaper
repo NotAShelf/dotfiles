@@ -33,7 +33,7 @@ case $(date +%H) in
 	randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Light"
 	;;
 	
-	16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 01 | 02 | 03 | 04 | 05 | 06 | 07) # afternoon to morning	
+	16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07) # afternoon to morning	
 	randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Dark"
 	;;
 esac
