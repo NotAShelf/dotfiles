@@ -11,7 +11,7 @@
 ### Welcome fellow stranger
 
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/main.png" alt="img" align="right" width="400px">
-<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/logout.png" alt="img" align="right" width="400px">
+<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/terminals.png" alt="img" align="right" width="400px">
 
 This is where I periodically throw my configuration files. You might be here for 
 something specific, in that case I recommend 
@@ -32,7 +32,7 @@ Here are some details about my setup:
 --- 
 
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/wofi.png" alt="img" align="left" width="400px">
-<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/terms.png" alt="img" align="left" width="400px">
+<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/logout.png" alt="img" align="left" width="400px">
 
 ### Main Applications
 
