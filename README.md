@@ -10,7 +10,7 @@
 
 ### Welcome fellow stranger
 
-<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/main.png" alt="img" align="right" width="400px">
+<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/main.png" alt="img" align="right" width="400px"><br/>
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/terminals.png" alt="img" align="right" width="400px">
 
 This is where I periodically throw my configuration files. You might be here for 
@@ -31,7 +31,7 @@ Here are some details about my setup:
 
 --- 
 
-<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/wofi.png" alt="img" align="left" width="400px">
+<img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/wofi.png" alt="img" align="left" width="400px"><br/>
 <img src="https://github.com/NotAShelf/dotfiles/blob/master/.github/assets/logout.png" alt="img" align="left" width="400px">
 
 ### Main Applications
@@ -46,8 +46,6 @@ Here are some details about my setup:
 - **Clipboard Manager**: cliphist
 - **Media**: mopidy & nncmpp
 - **Shell Prompt**: Oh My Zsh! + Powerlevel10k
-
-You will find my configs for Hyprland, Swaync, Waybar and Wofi in the `.config` directory, should you be interested.
 
 ---
 
