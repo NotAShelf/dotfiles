@@ -23,7 +23,7 @@ Here are some details about my setup:
 + **OS**: Arch Linux
 + **Shell**: [zsh](https://wiki.archlinux.org/index.php/Zsh)
 + **Terminal(s)**: [kitty](https://github.com/kovidgoyal/kitty/) & [Alacritty](https://github.com/alacritty/alacritty)
-+ **Editor**: [Neovim](https://github.com/neovim/neovim/) w/ [NvChad](https://github.com/NvChad/NvChad)
++ **Editor**: [Neovim](https://github.com/neovim/neovim/) w/ [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 + **Org editor**: [Doom Emacs](https://github.com/hlissner/doom-emacs/)
 + **File Manager**: [Dolphin](https://github.com/KDE/dolphin)
 + **Launcher**: [Wofi](https://hg.sr.ht/~scoopta/wofi/) 
