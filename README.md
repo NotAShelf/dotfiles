@@ -75,5 +75,5 @@ If you have any questions or issues, open an issue under this repository. If you
 Huge props to the awesome people listed below. If you like my dotfiles in the state they are in, it's most likely dude to how much those people inspired me (euphemism for stealing) with their configurations.
 
 + **[bauzin-32](https://github.com/bazuin-32/dotfiles)** - Most of my revamped zsh configuration and my new locking scripts from his dots. Awesome scripts, and incredibly neat dots. Massive thanks for having the dots open to public on Github.
-
++ **[0x4nt](https://github.com/0x4nt/dotfiles)** - The installation script in /Scripts was partially inspired and improved by his apply.sh
 
