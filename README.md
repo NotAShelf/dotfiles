@@ -48,7 +48,7 @@ Here are some details about my setup:
 + **Powermenu**: wlogout
 + **Clipboard Manager**: cliphist
 + **Media**: mopidy & nncmpp
-+ **Theming**: Kvantum && qt5ct
++ **Theming**: Kvantum & qt5ct
 
 ---
 
