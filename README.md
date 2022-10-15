@@ -22,7 +22,7 @@ Here are some details about my setup:
 + **WM**: [Hyprland](https://github.com/hyprwm/Hyprland/) - *the* Wayland Compositor
 + **OS**: Arch Linux
 + **Shell**: [zsh](https://wiki.archlinux.org/index.php/Zsh)
-+ **Font**: [https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf](JetBrains Mono Nerd Font)
++ **Font**: [JetBrains Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf)
 + **Terminal(s)**: [kitty](https://github.com/kovidgoyal/kitty/) & [Alacritty](https://github.com/alacritty/alacritty)
 + **Shell Prompt**: Oh My Zsh! + Powerlevel10k
 + **Editor**: [Neovim](https://github.com/neovim/neovim/) w/ [AstroNvim](https://github.com/AstroNvim/AstroNvim)
