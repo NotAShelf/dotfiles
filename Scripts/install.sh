@@ -79,7 +79,7 @@ if [ "$1" == "--apply" ]; then
   for file in $FILES
   do
     echo "Copying '${file}' to ~/.config"
-    diff -q "${file}" ~/.config/"${file}"
+    diff -q "${file}" ~/.config/"${file}" >> filediff.log
     cp -rv "${file}" ~/.config
   done
 
