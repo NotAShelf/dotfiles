@@ -57,16 +57,17 @@ fi
 # packages.list in $SCRIPTDIR
 if [ "$1" == "--install" ]; then
   cd "${SCRIPTDIR}" || exit 1
-  LATEST=$(ls -t packages-*.list | head -n 1)
-  packages=$(cat "$SCRIPTDIR"/"$LATEST")
-  echo "Installing packages from '${packages}'"
+  
 
   if ! pacman -Qq "$(cat "$SCRIPTDIR"/packages-*.list)" >/dev/null 2>&1; then
-    echo "Installing packages..."
+    LATEST=$(ls -t packages-*.list | head -n 1)
+    packages=$(cat "$SCRIPTDIR"/"$LATEST")
+    echo "Installing packages from '${packages}'"
+    
     for package in $packages
     do
       echo "Installing '$package'"
-      ${HELPER} -S '$package' --noconfirm
+      ${HELPER} -S "$package" --noconfirm
     done
   fi
 fi
