@@ -66,7 +66,7 @@ if [ "$1" == "--install" ]; then
     for package in $packages
     do
       echo "Installing '$package'"
-      sudo ${HELPER} -S '$package' --noconfirm
+      ${HELPER} -S '$package' --noconfirm
     done
   fi
 fi
