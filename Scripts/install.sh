@@ -76,6 +76,9 @@ fi
 # in $SCRIPTDIR
 if [ "$1" == "--apply" ]; then
   FILES=$(tree -if "${SCRIPTDIR}"/.config)
+  if [ ! "$(tree)" ]; then
+    ${HELPER} -S tree
+  fi
 
   for file in $FILES
   do
