@@ -75,11 +75,12 @@ fi
 # If the script is run with "--apply" as the first argument, list all files in .config and override ~/.config with them
 # in $SCRIPTDIR
 if [ "$1" == "--apply" ]; then
-  FILES=$(tree -if "${SCRIPTDIR}"/.config)
+  
   if [ ! "$(tree)" ]; then
     ${HELPER} -S tree
   fi
-
+  
+  FILES=$(tree -if "${SCRIPTDIR}"/.config)
   for file in $FILES
   do
     echo "Copying '${file}' to ~/.config"
