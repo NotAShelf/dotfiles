@@ -20,7 +20,7 @@ if [ $# -eq 0 ]; then
   echo -en "Usage:\n
               $SCRIPTNAME --install - Installs packages from the latest packages-<date>.list file.\n
               $SCRIPTNAME --backup  - Generates a list of installed packages and saves it to a file\n
-              $SCRIPTNAME --apply   - Applies the current files in .config to ~/.config
+              $SCRIPTNAME --apply   - Applies the current files in .config to ~/.config\n
               "
   exit 1
 fi
@@ -31,7 +31,7 @@ if [ "$1" != "--install" ] && [ "$1" != "--backup" ] && [ "$1" != "--apply" ]; t
 	  echo -en "Usage:\n
 	              $SCRIPTNAME --install - Installs packages from the latest packages-<date>.list file\n
 	              $SCRIPTNAME --backup  - Generates a list of installed packages and saves it to a file\n
-                $SCRIPTNAME --apply   - Applies the current files in .config to ~/.config
+                $SCRIPTNAME --apply   - Applies the current files in .config to ~/.config\n
 	              "
 	  exit 1
   fi
