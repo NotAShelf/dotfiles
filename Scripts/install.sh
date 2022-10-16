@@ -57,16 +57,16 @@ fi
 # packages.list in $SCRIPTDIR
 if [ "$1" == "--install" ]; then
   cd "${SCRIPTDIR}" || exit 1
-  LATEST=$(ls -t packages-*.list | head -n 1)
+  LATEST=$(ls -t packages-*.txt | head -n 1)
   packages="$SCRIPTDIR"/"$LATEST"
   echo "Installing packages from '${packages}'"
 
-  if ! pacman -Qq "$(cat "$SCRIPTDIR"/packages-*.list)" >/dev/null 2>&1; then
+  if ! pacman -Qq "$(cat "$SCRIPTDIR"/packages-*.txt)" >/dev/null 2>&1; then
     echo "Installing packages..."
     for package in $packages
     do
-      echo "Installing '${package}'"
-      sudo ${HELPER} -S '${package}' --noconfirm
+      echo "Installing '$package'"
+      sudo ${HELPER} -S '$package' --noconfirm
     done
   fi
 fi
@@ -90,7 +90,7 @@ fi
 if [ "$1" == "--backup" ]; then
   echo "Generating list of installed packages..."
   # Set CURBACKUP as packages-YYDDMMHHMM.list
-  CURBACKUP="packages-'$(date +%y%d%m%H%M)'.list"
+  CURBACKUP="packages-$(date +%y%d%m%H%M).txt"
   # Generate a list of installed packages and save it to $CURBACKUP
   pacman -Qqe > "${SCRIPTDIR}"/"${CURBACKUP}"
   echo "Systems packages backed up at '${CURBACKUP}'"
