@@ -38,7 +38,9 @@
   "widgets": [
     "title",
     "dnd",
-    "notifications"
+    "notifications",
+    "label",
+    "mpris"
   ],
   "widget-config": {
     "title": {
@@ -51,11 +53,11 @@
     },
     "label": {
       "max-lines": 5,
-      "text": "Label Text"
+      "text": "Currently Playing"
     },
     "mpris": {
-      "image-size": 96,
-      "image-radius": 12
+      "image-size": 48,
+      "image-radius": 6
     }
   }
 }
