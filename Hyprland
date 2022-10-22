@@ -26,9 +26,9 @@ XDG_SESSION_TYPE=wayland \
 GBM_BACKEND=nvidia-drm \
 MOZ_ENABLE_WAYLAND=1 \
 WLR_NO_HARDWARE_CURSORS=1 \
-GTK_THEME=Graphite-dark \
+GTK_THEME=Graphite-Dark \
 XCURSOR_SIZE=16 \
-XCURSOR_THEME=Breeze $1 ; echo "Done." || echo -en "Failed to start Hyprland. Consider issuing a bug report!"
+XCURSOR_THEME=Qogir $1 ; echo "Done." || echo -en "Failed to start Hyprland. Consider issuing a bug report!"
 
 
 

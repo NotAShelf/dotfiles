@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-kitty -c ~/.config/hypr/kitty/kitty.conf --class="sysupdate" \
-      -e yay -Syu && notify-send 'The system has been updated' && \
-       echo -e "System updated successfully." || notify-send 'System upgrade has failed' && \
+kitty -c ~/.config/hypr/kitty/kitty.conf --title "sysupdate" --class="sysupdate" \
+      -e yay -Syu || notify-send 'System upgrade has failed' && \
+       notify-send 'The system has been updated' && \
+       echo -e "System updated successfully." 
        echo -e "System update failed!"
