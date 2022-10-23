@@ -1,10 +1,9 @@
 * {
     border: none;
     font-family: "JetbrainsMono Nerd Font" ;
-    font-size: 16px;
+    font-size: 14px;
     color: #eeeeee;
     border-radius: 20px; /* Controls Rounding */
-    padding: 2px 2px;
 }
 
 #window {
@@ -15,34 +14,41 @@
     padding-bottom: 0px;
     border-radius: 8px;
     transition: none;
-    color: transparent;
-    background: transparent;
 
   }
 
 window#waybar {
     background: rgba(0, 0, 0, 1);
+    padding: 2px 2px;
     /* background: transparent; */
 }
+
+window#waybar.empty {
+    animation: fadeIn 5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+  }
 
 /*-----module groups----*/
 .modules-right {
 	background: #000000;
     /* margin: 0 -12px 0 0; */
-    border-radius: 20px;
+    padding-right:7px;
 }
 
 .mnodules-center {
 	background-color: rgba(8,8,8,0.85);
     /* background: transparent; */
     margin: 0 0 0 0;
-    border-radius: 20px;
+
 }
 
 .modules-left {
 	background: #000000;
     /* margin: 0 -12px 0 0; */
-    border-radius: 20px;
+    padding-left:7px;
 }
 
 tooltip {
@@ -52,27 +58,30 @@ tooltip {
 }
 
 #workspaces {
-
   padding-right: 0px;
 }
 
 /*-----modules indv----*/
 #workspaces button {
     font-weight: bold;
+    padding-right: 0px;
     /* padding-right: 7px */
 }
 #workspaces button:hover {
     font-weight: bold;
+    padding-right: 0px;
     /* padding-right: 7px */
 }
 
 #workspaces button.focused {
     font-weight: bold;
+    padding-right: 0px;
     /* padding-right: 7px */
 }
 
 #workspaces button.active {
     font-weight: bold;
+    /* background-color: #ffffff; */
     /* padding-right: 7px */
 }
 
@@ -103,10 +112,18 @@ tooltip {
 #network,
 #pulseaudio,
 #custom-media,
+
 #tray {
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
+
+
+#keyboard-state {
+  padding-left: 0px;
+  padding-right: 0px;
+ }
+
 #mode,
 #custom-power,
 #custom-launcher {

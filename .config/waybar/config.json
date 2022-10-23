@@ -7,22 +7,22 @@
     "fixed-center": true,
     
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "custom/sep_l", "keyboard-state", "custom/sep_l", "tray", "custom/updates"],
-    "modules-center": ["clock"],
-    "modules-right": ["cpu", "custom/sep_r", "disk", "custom/sep_r", "memory", "custom/sep_r", "pulseaudio", "custom/sep_r", "network", "custom/sep_r", "custom/notification", "custom/sep_r", "custom/launcher"],
+    "modules-left": ["wlr/workspaces", "custom/sep", "tray", "custom/sep_l", "custom/updates"],
+    "modules-center": ["clock", "sep", "custom/notification"],
+    "modules-right": ["gamemode", "cpu", "custom/sep_r", "disk", "custom/sep_r", "memory", "custom/sep_r", "pulseaudio", "custom/sep_r", "network", "custom/sep_r", "custom/launcher"],
 
     // Custom Seperators
     "custom/sep_r": {
-		    "format": ""
+		    "format": " " // ""
     },
  
     
     "custom/sep": {
-        "format": "|"
+        "format": " | "
     },
 
     "custom/sep_l": {
-		    "format": ""
+		    "format": " " // ""
     },
     
     "custom/empty": {
@@ -31,13 +31,13 @@
     // End Seperators
     
     "custom/notification": {
-		"tooltip": false,
+		"tooltip": true,
 		"format": "{icon}",
 		"format-icons": {
-			"notification": "<span foreground='white'><sup></sup></span>",
-			"none": " ",
-			"dnd-notification": "<span foreground='white'><sup></sup></span>",
-			"dnd-none": " "
+			"notification": " <span foreground='white'><sup></sup></span>",
+			"none": "  ",
+			"dnd-notification": " <span foreground='white'><sup></sup></span>",
+			"dnd-none": "  "
 		    },
 	    "return-type": "json",
 	    "exec-if": "which swaync-client",
@@ -74,6 +74,24 @@
         "format-tr": "TR"
     },
 
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true
+    },
+
+    "gamemode": {
+        "format": "{glyph}",
+        "format-alt": "{glyph} {count}",
+        "glyph": "",
+        "hide-not-running": true,
+        "use-icon": true,
+        "icon-name": "input-gaming-symbolic",
+        "icon-spacing": 4,
+        "icon-size": 20,
+        "tooltip": true,
+        "tooltip-format": "Games running: {count}"
+    },
+
   
     "keyboard-state": {
         "interval": 1,
@@ -82,7 +100,7 @@
         "format": "{icon}",
         "format-icons": {
             "locked": " ",
-            "unlocked": " "
+            "unlocked": ""
         }
   },
   
@@ -129,9 +147,9 @@
 		
     "clock": { 
 		"timezone": "Europe/Istanbul", 
-		"format": "{: %I:%M %p   %d/%m/%Y}",
+        "format": "{: %I:%M %p}",
+		"format-alt": "{: %I:%M %p   %d/%m/%Y}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format-alt": "{: %I:%M %p}",
     	"today-format": "<span color='#aaaaaa'><b><u>{}</u></b></span>",
     	"calendar-weeks-pos": "right",
     	"format-calendar": "<span color='#ffffff'><b>{}</b></span>",

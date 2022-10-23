@@ -2,16 +2,18 @@
  * vim: ft=less
  */
 
-@define-color cc-bg rgba(0, 0, 0, 0.7);
-
-@define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg rgb(48, 48, 48);
-@define-color noti-bg-hover rgb(56, 56, 56);
-@define-color noti-bg-focus rgba(68, 68, 68, 0.6);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-
-@define-color bg-selected rgb(0, 128, 255);
+@define-color cc-bg rgba(0, 0, 0, 0.9);
+@define-color noti-border-color #ffffff;
+@define-color noti-bg rgba(0, 0, 0, 0.9);
+@define-color border2 #101726;
+@define-color noti-bg2 #1d2021;
+@define-color noti-bg-hover #94e2d5;
+@define-color noti-bg-focus #d79921;
+@define-color noti-close-bg transparent;
+@define-color noti-close-bg-hover transparent;
+@define-color text #ebdbb2;
+@define-color slider #F2F2F2;
+@define-color bg-selected rgba(137, 220, 235, 0.5);
 
 .notification-row {
   outline: none;
@@ -23,10 +25,10 @@
 }
 
 .notification {
-  border-radius: 12px;
+  border-radius: 10px;
+  border: 2px solid @noti-border-color;
   margin: 6px 12px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
-    0 2px 6px 2px rgba(0, 0, 0, 0.3);
+
   padding: 0;
 }
 
@@ -53,48 +55,48 @@
 .notification-content {
   background: transparent;
   padding: 6px;
-  border-radius: 12px;
+  border-radius: 10px;
+  border: 2px solid transparent;
 }
 
 .close-button {
   background: @noti-close-bg;
-  color: white;
+  color: #ffffff;
   text-shadow: none;
-  padding: 0;
-  border-radius: 100%;
+  padding: 0 4px;
+  border-radius: 4px;
   margin-top: 10px;
   margin-right: 16px;
   box-shadow: none;
-  border: none;
-  min-width: 24px;
-  min-height: 24px;
 }
 
 .close-button:hover {
   box-shadow: none;
   background: @noti-close-bg-hover;
   transition: all 0.15s ease-in-out;
-  border: none;
 }
 
 .notification-default-action,
 .notification-action {
-  padding: 4px;
+  padding: 0px;
   margin: 0;
+  border-radius: 10px;
   box-shadow: none;
   background: @noti-bg;
-  border: 1px solid @noti-border-color;
-  color: white;
+  
+  border: 2px solid transparent;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
   -gtk-icon-effect: none;
-  background: @noti-bg-hover;
+  
+  color: #11111b;
 }
 
 .notification-default-action {
-  border-radius: 12px;
+  border-radius: 10px;
+  color: #11111b;
 }
 
 /* When alternative actions are visible */
@@ -104,9 +106,10 @@
 }
 
 .notification-action {
-  border-radius: 0px;
+  border-radius: 10px;
   border-top: none;
   border-right: none;
+  color: #11111b;
 }
 
 /* add bottom border radius to eliminate clipping */
@@ -117,78 +120,74 @@
 .notification-action:last-child {
   border-bottom-right-radius: 10px;
   border-right: 1px solid @noti-border-color;
+  color: #11111b;
 }
 
-.image {
-}
+.image {}
 
 .body-image {
   margin-top: 6px;
-  background-color: white;
+  background-color: @text;
   border-radius: 12px;
 }
 
 .summary {
-  color: white;
+  color: @text;
   text-shadow: none;
 }
 
 .time {
-  color: white;
+  color: @text;
   text-shadow: none;
   margin-right: 18px;
 }
 
 .body {
   background: transparent;
-  color: white;
+  color: @text;
   text-shadow: none;
 }
 
-/* The "Notifications" and "Do Not Disturb" text widget */
 .top-action-title {
-  color: white;
+  color: @text;
   text-shadow: none;
 }
 
 .control-center-clear-all {
-  color: white;
+  color: @text;
+  padding: 7px;
   text-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: @cc-bg;
+  border: 2px solid @noti-border-color;
   box-shadow: none;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .control-center-clear-all:hover {
-  background: @noti-bg-hover;
+  color: #11111b;
+  background-color: @noti-border-color;
 }
 
 .control-center-dnd {
-  border-radius: 12px;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  border-radius: 20px;
+  background: @noti-bg2;
+  border: 2px solid @noti-border-color;
   box-shadow: none;
 }
 
 .control-center-dnd:checked {
-  background: @bg-selected;
+  background: @noti-bg;
 }
 
 .control-center-dnd slider {
-  background: @noti-bg-hover;
-  border-radius: 12px;
+  background: @noti-border-color;
+  border-radius: 20px;
+  border: 2px solid @border2;
 }
 
-/* The .control-center Window.
- * Can't apply padding and margin so may be easier to use "> box" instead
- */
 .control-center {
   background: @cc-bg;
-}
-
-/* The first control-center child. May be easier to style this than .control-center */
-.control-center > box {
+  margin-bottom: 50;
 }
 
 .control-center-list {
@@ -197,9 +196,4 @@
 
 .floating-notifications {
   background: transparent;
-}
-
-/* Window behind control center and on all other monitors */
-.blank-window {
-  background: alpha(black, 0.25);
 }

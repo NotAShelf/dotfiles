@@ -1,62 +1,34 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "positionX": "center",
-  "positionY": "bottom",
-  "control-center-margin-top": 20,
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-margin-top": 0,
   "control-center-margin-bottom": 0,
-  "control-center-margin-right": 20,
+  "control-center-margin-right": 0,
   "control-center-margin-left": 0,
   "timeout": 10,
   "timeout-low": 5,
   "timeout-critical": 0,
   "fit-to-screen": true,
   "control-center-width": 500,
-  "notification-window-width": 400,
+  "notification-window-width": 500,
   "keyboard-shortcuts": true,
-  "image-visibility": "when-available",
+  "image-visibility": "always",
   "transition-time": 200,
   "hide-on-clear": false,
   "hide-on-action": true,
   "script-fail-notify": true,
-  "widgets": [
-    "title",
-    "dnd",
-    "notifications",
-    "label",
-    "mpris"
-  ],
   "scripts": {
     "example-script": {
       "exec": "echo 'Do something...'",
       "urgency": "Normal"
     }
   },
-  
   "notification-visibility": {
     "example-name": {
       "state": "muted",
       "urgency": "Low",
       "app-name": "Spotify"
     }
-  },
-
-  "widget-config": {
-    "title": {
-      "text": "Notifications",
-      "clear-all-button": true,
-      "button-text": "Clear All"
-    },
-    "dnd": {
-      "text": "Do Not Disturb"
-    },
-    "label": {
-      "max-lines": 5,
-      "text": "Currently Playing"
-    },
-    "mpris": {
-      "image-size": 48,
-      "image-radius": 6
-    }
   }
-
 }
