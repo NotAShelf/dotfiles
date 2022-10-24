@@ -262,7 +262,7 @@
         "exec": "checkupdates | wc -l",
         "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
         "interval": 60,
-        "on-click": "kitty -e yay -Syu && notify-send 'The system has been updated' || notify-send 'System upgrade has failed' "
+        "on-click": "~/.config/hypr/scripts/launchUpdater"
     },
     
     "custom/wallpaper":{
