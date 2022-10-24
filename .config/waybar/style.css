@@ -36,6 +36,7 @@ window#waybar.hidden {
 	background: #000000;
     /* margin: 0 -12px 0 0; */
     padding-right:7px;
+    margin: 4px;
 }
 
 .mnodules-center {
@@ -87,10 +88,13 @@ tooltip {
 
 #custom-sep_l {
 	color: #ffffff;
+        margin: 0px 10px 0px 10px;
 }
 
 #custom-sep_r {
     color: #ffffff;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 #custom-sep {
@@ -103,6 +107,7 @@ tooltip {
 
 #clock {
 	font-weight: bold;
+    padding: 0px 4px
 }
 
 #battery,
@@ -112,6 +117,10 @@ tooltip {
 #network,
 #pulseaudio,
 #custom-media,
+
+#custom-updates {
+    padding: 0px 0px
+}
 
 #tray {
   padding-left: 0px;

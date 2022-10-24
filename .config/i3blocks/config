@@ -1,0 +1,35 @@
+[wifi]
+command=sh ~/.config/i3blocks/scripts/get_wifi.sh
+label=
+interval=30
+
+[uptime]
+command=uptime | awk '{ print $3 }' | sed 's/,//g'
+label=up: 
+interval=60
+
+[memory]
+command=free -m | tail -n2 | head -n1 | awk '{ print $3 " gb"}'
+label=mem: 
+interval=10
+
+[weather]
+command=sh ~/.config/i3blocks/scripts/get_weather.sh
+label=weather: 
+interval=1200
+
+[volume]
+command=sh ~/.config/i3blocks/scripts/volume_handler.sh 
+label=vol: 
+interval=1
+
+#[battery]
+#command=acpi | awk ' { print $4 }' | sed 's/,*$//g'
+#label=Battery: 
+#interval=60
+
+[date]
+command=date +%H:%M" "%d." "%b" " 
+label=
+interval=60
+

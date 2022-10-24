@@ -1,0 +1,156 @@
+#█╗   ██╗███╗   ██╗ █████╗  ██████╗██╗  ██╗   ██╗    ██╗██████╗      ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗  
+#╚██╗██╔╝████╗  ██║██╔══██╗██╔════╝██║  ╚██╗ ██╔╝    ██║╚════██╗    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
+# ╚███╔╝ ██╔██╗ ██║███████║██║     ██║   ╚████╔╝     ██║ █████╔╝    ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+# ██╔██╗ ██║╚██╗██║██╔══██║██║     ██║    ╚██╔╝      ██║ ╚═══██╗    ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+#██╔╝ ██╗██║ ╚████║██║  ██║╚██████╗███████╗██║       ██║██████╔╝    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+#╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝       ╚═╝╚═════╝      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
+# https://github.com/xnacly/dotfiles
+set $background "#1e1d2f"
+set $background_trans "#1e1d2f60"
+set $background2 "#1E1E2E"
+set $accent1 "#DDB6F2"
+set $accent2 "#F5C2E7"
+set $accent3 "#E8A2AF"
+set $text_color1 "#D9E0EE"
+set $text_color2 "#988BA2"
+set $text_color3 "#C9CBFF"
+set $color_danger "#F28FAD"
+set $color_warning "#FAE3B0"
+set $color_success "#ABE9B3"
+set $browser "firefox"
+set $term "kitty"
+set $wallpaper_path ~/.config/wallpapers
+set $font JetBrains Mono Nerd Font
+set $font_size 10
+set $gaps 0
+hide_edge_borders smart
+focus_follows_mouse no
+set $mod Mod4 
+set $alt Mod1
+bindsym Control+$alt+l exec "xscreensaver-command -l"
+bindsym ctrl+space exec "dunstctl close"
+bindsym $mod+c exec "kitty --directory=.config/i3/"
+bindsym $mod+b exec $browser 
+bindsym $mod+shift+s exec "flameshot gui"
+bindsym $mod+e exec "thunar"
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next 
+bindsym XF86KbdBrightnessUp exec brightnessctl --device="smc::kbd_backlight" set +20
+bindsym XF86KbdBrightnessDown exec brightnessctl --device="smc::kbd_backlight" set 20-
+bindsym XF86MonBrightnessUp exec brightnessctl set +150
+bindsym XF86MonBrightnessDown exec brightnessctl set 150-
+bindsym Print exec "flameshot full -c"
+for_window [class="Spotify"] move to workspace $ws4 
+for_window [class="firefox"] move to workspace $ws1
+assign [class="discord"] → $ws3
+assign [class=$term] → $ws2
+for_window [window_role="pop-up"]                       floating enable
+for_window [window_role="bubble"]                       floating enable 
+for_window [window_role="task_dialog"]                  floating enable
+for_window [window_role="Preferences"]                  floating enable
+for_window [window_type="dialog"]                       floating enable 
+for_window [window_type="menu"]                         floating enable
+title_align center
+bindsym $mod+n exec "nm-connection-editor"
+#gaps inner $gaps
+font pango:$font $font_size
+bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -i -p "App:" -fn "JetBrains Mono Nerd Font:12"' 
+exec --no-startup-id nm-applet
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
+bindsym XF86AudioMute exec "sh ~/.config/i3/scripts/volume.sh"
+floating_modifier $mod
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+q kill
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+comma split v
+bindsym $mod+period split h
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+# class                 border          bg              text            indicator
+client.focused          $accent3        $accent1        $text_color1    $accent2
+client.unfocused        $background     $background     $text_color2    $background
+default_border pixel 2
+default_floating_border normal 5
+bar {
+        bindsym button1 nop
+        status_command i3blocks
+        i3bar_command i3bar --transparency
+        position top
+        separator_symbol " " 
+        colors {
+                background $background
+                statusline $accent1
+                separator $text_color1
+                
+                #class                  border                  bg                      text    
+                focused_workspace       $accent1                $accent1                $text_color1
+                active_workspace        $accent1                $background_trans       $accent1
+                inactive_workspace      $background_trans       $background_trans       $text_color2
+                urgent_workspace        $color_danger           $color_danger           $text_color1
+                binding_mode            $color_danger           $color_danger           $text_color1
+
+        }
+}
+exec --no-startup-id dunst
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id xscreensaver
+exec_always --no-startup-id "picom -f"
+exec_always --no-startup-id "playerctld daemon"
+exec --no-startup-id "xrandr -s 1920x1080 -r 144.00"
+exec --no-startup-id i3-msg "exec spotify"
+exec --no-startup-id i3-msg "exec discord"
+exec --no-startup-id i3-msg "exec flameshot"
+exec --no-startup-id i3-msg "exec thunar --deamon"
+exec_always --no-startup-id xsetroot -solid "#000"
+exec_always --no-startup-id "gnome-keyring-daemon --start"
