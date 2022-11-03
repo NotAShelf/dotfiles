@@ -87,7 +87,7 @@
         "use-icon": true,
         "icon-name": "input-gaming-symbolic",
         "icon-spacing": 4,
-        "icon-size": 20,
+        "icon-size": 19,
         "tooltip": true,
         "tooltip-format": "Games running: {count}"
     },
@@ -257,7 +257,7 @@
     },
     
     "custom/updates":{
-        "format": "|   {} Update(s)",
+        "format": " |   {} Update(s)",
         "tooltip": "false",
         "exec": "checkupdates | wc -l",
         "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
