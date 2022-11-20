@@ -30,12 +30,12 @@ randomizeWallpaper() {
 
 
 case $(date +%H) in
-	08 | 09 | 10 | 11 | 12 | 13 | 14 | 15) # morning to noon
+	08 | 09 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17) # morning to noon
 	while true; do
 		randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Light" ; sleep $((RANDOM % 8 + 7))m && continue
 	done
 	;;
-	16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07) # afternoon to morning	
+	18 | 19 | 20 | 21 | 22 | 23 | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07) # afternoon to morning	
 	while true; do
 	randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Dark" ; sleep $((RANDOM % 8 + 7))m && continue
 	done

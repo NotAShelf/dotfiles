@@ -1,8 +1,11 @@
 [Added Associations]
 application/json=org.kde.kate.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
 application/x-wine-extension-ini=org.kde.kate.desktop;
+application/x-xz-compressed-tar=org.kde.ark.desktop;
 application/x-yaml=code-oss.desktop;
 audio/flac=mpv.desktop;
+image/gif=org.kde.gwenview.desktop;
 image/jpeg=org.kde.gwenview.desktop;
 image/png=org.kde.gwenview.desktop;
 inode/directory=org.kde.dolphin.desktop;code-oss.desktop;
@@ -22,6 +25,7 @@ x-scheme-handler/tel=org.kde.kdeconnect.handler.desktop;
 application/json=org.kde.kate.desktop;
 application/x-wine-extension-ini=org.kde.kate.desktop;
 audio/flac=mpv.desktop;
+image/gif=org.kde.gwenview.desktop;
 image/jpeg=org.kde.gwenview.desktop;
 image/png=org.kde.gwenview.desktop;
 inode/directory=org.kde.dolphin.desktop;
