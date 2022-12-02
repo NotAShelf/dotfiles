@@ -1,33 +1,75 @@
-#!/bin/sh
+#!/bin/bash
 
-randomizeWallpaper() {
+_randomizeAnim() {
+	# Choose an transition type from the predefined list
+	# Available transition types are:
+	# simple | left | right | top | bottom | wipe | center | outer | any | random
+	# (we are not using "random" because we want the freedom to remove or add transitions at will)
+	declare -a Anims=("center" "any" "wipe" )
+	anim=${Anims[$RANDOM % ${#Anims[@]}]}
+	
+	# Make sure we don't use the same transition twice in a row
+	if [ "$anim" == "$lastAnim" ]; then
+		_randomizeAnim
+	fi
+
+	lastAnim=$anim
+}
+
+_randomSpeed() {
+	# Choose a random speed between 1 and 200
+	speed=$(( $RANDOM % 200 + 1 ))
+}
+
+_randomImage() {
 	# List all images in given directory, which is the first argument
 	# to this script.
 	images=$(find "$1" -type f \( -name '*.jpg' -o -name '*.png' \))
-	
-	echo "Found the following images:"
-	echo "$images"
-	
+
 	# Count the number of images.
 	num_images=$(echo "$images" | wc -l)
+	
+	echo "Found (${num_images}) images:"
+	echo -en "---\n${images}\n---\n"
+
 
 	# Pick a random image.
-	image=$(echo "$images" | head -n $((RANDOM % num_images + 1)) | tail -n 1)
-
-	# Set wallpaper after emitting chosen image
-	echo "Setting $image as wallpaper."
-	sleep 1
-	
-	# Check if swww is running 
-	if pgrep -x "swww" > /dev/null; then
-		swww img "${image}"
+	# Make sure we don't use the same image twice in a row.
+	# If there is only one image, we don't need to check.
+	if [ "$num_images" -gt 1 ]; then
+		image=$(echo "$images" | sed -n "$(( $RANDOM % $num_images + 1 ))p")
+		if [ "$image" == "$lastImage" ]; then
+			_randomImage "$1"
+		fi
 	else
-		# If it's not running, start swww before setting the image
-		swww init && swww img "${image}"
+		image=$(echo "$images" | sed -n "1p")
 	fi
 
+	lastImage=$image
+
+	echo "Using image: ${image}"
+	sleep 5
+
+	# image=$(echo "$images" | head -n $((RANDOM % num_images + 1)) | tail -n 1)
+	# # Set wallpaper after emitting chosen image
+	# echo "Setting $image as wallpaper."
+	# sleep 1
 }
 
+randomizeWallpaper() {
+	# Randomize transition type and speed
+	_randomizeAnim
+	_randomSpeed
+	_randomImage "$@"
+
+	# Check if swww is running 
+	if pgrep -x "swww" > /dev/null; then
+		swww img "${image}" --transition-type "${anim}" --transition-speed "${speed}"
+	else
+		# If it's not running, start swww before setting the image
+		swww init && swww img "${image}" --transition-type "${anim}" --transition-speed "${speed}"
+	fi
+}
 
 case $(date +%H) in
 	08 | 09 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17) # morning to noon
@@ -37,7 +79,7 @@ case $(date +%H) in
 	;;
 	18 | 19 | 20 | 21 | 22 | 23 | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07) # afternoon to morning	
 	while true; do
-	randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Dark" ; sleep $((RANDOM % 8 + 7))m && continue
+		randomizeWallpaper "/home/notashelf/Pictures/Wallpapers/Monochrome/Dark" ; sleep $((RANDOM % 8 + 7))m && continue
 	done
 	;;
 esac
