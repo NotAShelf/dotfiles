@@ -16,9 +16,9 @@ _randomizeAnim() {
 	lastAnim=$anim
 }
 
-_randomSpeed() {
+_randomDuration() {
 	# Choose a random speed between 1 and 200
-	speed=$(( $RANDOM % 200 + 1 ))
+	duration=$(( $RANDOM % 7 + 1 ))
 }
 
 _randomImage() {
@@ -59,15 +59,15 @@ _randomImage() {
 randomizeWallpaper() {
 	# Randomize transition type and speed
 	_randomizeAnim
-	_randomSpeed
+	_randomDuration
 	_randomImage "$@"
 
 	# Check if swww is running 
 	if pgrep -x "swww" > /dev/null; then
-		swww img "${image}" --transition-type "${anim}" --transition-speed "${speed}"
+		swww img "${image}" --transition-type "${anim}" --transition-duration "${duration}"
 	else
 		# If it's not running, start swww before setting the image
-		swww init && swww img "${image}" --transition-type "${anim}" --transition-speed "${speed}"
+		swww init && swww img "${image}" --transition-type "${anim}" --transition-duration  "${duration}"
 	fi
 }
 
