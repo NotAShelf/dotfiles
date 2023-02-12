@@ -5,7 +5,7 @@ Arc-Dark Color Scheme
 
 @define-color highlight #ffffff;
 @define-color base1  rgba(40 ,40 ,40 ,0.95 );
-@define-color base2  rgba(40 ,40 ,40 ,0.95 );
+@define-color base2  #191919;
 @define-color base3  rgba(50 ,48 ,47 ,0.75 );
 
 *{

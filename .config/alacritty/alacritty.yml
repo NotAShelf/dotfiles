@@ -12,8 +12,7 @@ font:
   normal: 
     style: Regular
     family: Jetbrains Mono Nerd Font
-
-  size: 15
+  size: 14
 
 colors:
   primary:
@@ -28,7 +27,7 @@ draw_bold_text_with_bright_colors: false
 colors:
   # Default colors
   primary:
-    background:        '#000000' #'#080808'
+    background:        '#191919' #'#080808'
     foreground:        '#ffffff' #'#b2b2b2'
     bright_foreground: '#eeeeee'
 

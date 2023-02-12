@@ -2,32 +2,53 @@
 
 echo -en "Starting Hyprland with NVIDIA Workarounds. Bugs may occur.\n"
 
+cd ~
+
+
 # Necessary variables for Wayland Nvidia workarounds 
 # and minor Hyprland Nitpicks (like cursors on qt apps.)
 
-LIBVA_DRIVER_NAME=nvidia \
-CLUTTER_BACKEND=wayland \
-WLR_BACKEND=vulkan \
-__GL_GSYNC_ALLOWED=0 \
-__GL_VRR_ALLOWED=0 \
-__GLX_VENDOR_LIBRARY_NAME=nvidia \
-SDL_VIDEODRIVER=wayland \
-_JAVA_AWT_WM_NONEREPARENTING=1 \
-XDG_SESSION_DESKTOP=${1} \
-WLR_DRM_NO_ATOMIC=1 \
-QT_AUTO_SCREEN_SCALE_FACTOR=1 \
-QT_QPA_PLATFORM="wayland;xcb" \
-QT_WAYLAND_DISABLE_WINDOWDECORATION=1 \
-QT_QPA_PLATFORMTHEME=qt5ct \
-GDK_BACKEND="wayland,x11" \
-XDG_CURRENT_DESKTOP=${1} \
-XDG_SESSION_TYPE=wayland \
-GBM_BACKEND=nvidia-drm \
-MOZ_ENABLE_WAYLAND=1 \
-WLR_NO_HARDWARE_CURSORS=1 \
-GTK_THEME=Graphite-Dark \
-XCURSOR_SIZE=16 \
-XCURSOR_THEME=Qogir $1 ; echo "Done." || echo -en "Failed to start Hyprland. Consider issuing a bug report!"
+
+# Log WLR errors and logs to the hyprland log
+export HYPRLAND_LOG_WLR=1
+
+
+# nvidia workarounds
+export LIBVA_DRIVER_NAME=nvidia 
+export __GL_GSYNC_ALLOWED=0 
+export __GL_VRR_ALLOWED=0 
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export GBM_BACKEND=nvidia-drm # creates problems with firefox on hybrid graphics (to be tested)
+export WLR_NO_HARDWARE_CURSORS=1 
+
+export CLUTTER_BACKEND=wayland 
+export WLR_BACKEND=vulkan 
+export SDL_VIDEODRIVER=wayland 
+export _JAVA_AWT_WM_NONEREPARENTING=1 
+export XDG_SESSION_DESKTOP=${1} 
+export WLR_DRM_NO_ATOMIC=1 
+export QT_AUTO_SCREEN_SCALE_FACTOR=1 
+export QT_QPA_PLATFORM="wayland;xcb" 
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 
+export QT_QPA_PLATFORMTHEME=qt5ct 
+export GDK_BACKEND="wayland,x11" 
+export XDG_CURRENT_DESKTOP=${1} 
+export XDG_SESSION_TYPE=wayland 
+export MOZ_ENABLE_WAYLAND=1 
+
+# theming 
+export GTK_THEME=Graphite-Dark 
+export XCURSOR_SIZE=16 
+export XCURSOR_THEME=Qogir
+
+# fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export SDL_IM_MODULE=fcitx
+export GLFW_IM_MODULE=ibus
+
+exec "$1" && echo "Done." || echo -en "Failed to start $1. Consider issuing a bug report!"
 
 
 
