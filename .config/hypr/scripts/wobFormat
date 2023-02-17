@@ -4,14 +4,14 @@
 volume=$(cat)
 
 # Remove "Volume:" from the output using regex
-volume=$(echo $volume | sed 's/Volume: //')
+volume=$(echo "${volume}" | sed 's/Volume: //')
 
 # Convert volume to percentage
-volume=$(echo "scale=2; $volume * 100" | bc)
+volume=$(echo "scale=2; ${volume} * 100" | bc)
 
 # Remove trailing zeros
-volume=$(echo $volume | sed 's/\.00//')
+volume=$(echo "${volume}" | sed 's/\.00//')
 
 
-echo $volume
+echo "${volume}"
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 swayidle -w \
-         timeout 300 'echo "Activating idle lock!" ; ~/.config/hypr/scripts/swayIdleLocker &' \
-         timeout 420 'echo "Turning dpms off" ; hyprctl dispatch dpms off' \
-                   resume 'echo "Turning dpms on" ; hyprctl dispatch dpms on' \
-         before-sleep 'echo "Activating sleep lock!" ; ~/.config/hypr/scripts/swayLocker &'
+    timeout 300 'echo "Activating idle lock!" ; ~/.config/hypr/scripts/swayIdleLocker &' \
+    timeout 600 'echo "Turning dpms off" ; hyprctl dispatch dpms off' \
+        resume 'echo "Turning dpms on" ; hyprctl dispatch dpms on' \
+    before-sleep 'echo "Activating sleep lock!" ; ~/.config/hypr/scripts/swayLocker &'
