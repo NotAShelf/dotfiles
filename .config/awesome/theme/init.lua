@@ -19,7 +19,7 @@ theme.br = dpi(2)
 theme.scrheight = 1080
 theme.scrwidth = 1920
 
-theme.wall = theme_path .. "wallpapers/" .. 'flower.jpg'
+theme.wall = theme_path .. "wallpapers/" .. 'wall.png'
 
 theme.bg = "#121111"
 theme.bg2 = "#191919"
