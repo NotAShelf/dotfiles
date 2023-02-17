@@ -18,6 +18,7 @@ super + x
 # terminal emulator
 super + Return
 	alacritty
+
 # wifi menu
 super + shift + w
   rofi-wifi
