@@ -140,8 +140,8 @@
     },
 
     "tray": {
-        "icon-size": 19,
-        "spacing": 4
+        "icon-size": 16,
+        "spacing": 6
     },
 
 		
@@ -264,10 +264,5 @@
         "interval": 60,
         "on-click": "~/.config/hypr/scripts/launchUpdater"
     },
-    
-    "custom/wallpaper":{
-        "format":" ",
-        "on-click": "kill $(pidof wpaperd) ;  wpaperd"
-    }
 }
 
