@@ -1,25 +1,19 @@
 #!/usr/bin/env bash
 
-echo -en "Starting Hyprland with NVIDIA Workarounds. Bugs may occur.\n"
+echo -en "Starting ${1}.\n"
 
 cd ~
-
-
-# Necessary variables for Wayland Nvidia workarounds 
-# and minor Hyprland Nitpicks (like cursors on qt apps.)
-
 
 # Log WLR errors and logs to the hyprland log
 export HYPRLAND_LOG_WLR=1
 
-
 # nvidia workarounds
-export LIBVA_DRIVER_NAME=nvidia 
-export __GL_GSYNC_ALLOWED=0 
-export __GL_VRR_ALLOWED=0 
-export __GLX_VENDOR_LIBRARY_NAME=nvidia
-export GBM_BACKEND=nvidia-drm # creates problems with firefox on hybrid graphics (to be tested)
-export WLR_NO_HARDWARE_CURSORS=1 
+#export LIBVA_DRIVER_NAME=nvidia 
+#export __GL_GSYNC_ALLOWED=0 
+#export __GL_VRR_ALLOWED=0 
+#export __GLX_VENDOR_LIBRARY_NAME=nvidia
+#export GBM_BACKEND=nvidia-drm # creates problems with firefox on hybrid graphics (to be tested)
+#export WLR_NO_HARDWARE_CURSORS=1 
 
 export CLUTTER_BACKEND=wayland 
 export WLR_BACKEND=vulkan 
