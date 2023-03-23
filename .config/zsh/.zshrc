@@ -47,4 +47,4 @@ source "$HOME"/.config/zsh/functions/ffmpeg.zsh
 
 # some stuff *really* want to be in path
 export PATH=$PATH:/home/notashelf/.spicetify
-exportPATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin
